@@ -1,0 +1,11 @@
+package com.bemach.tdd;
+
+public class BankAccount {
+
+	public int balance;
+
+	public void deposit(int i) {
+		balance = i;
+	}
+
+}

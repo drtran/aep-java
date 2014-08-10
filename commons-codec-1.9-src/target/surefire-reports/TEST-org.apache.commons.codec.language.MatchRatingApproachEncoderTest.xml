@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0" tests="96" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_45\jre\bin"/>
+    <property name="java.vm.version" value="24.45-b08"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\dev\training\eclipse-ws\commons-codec-1.9-src"/>
+    <property name="java.runtime.version" value="1.7.0_45-b18"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_45\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Ktran\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 8"/>
+    <property name="classworlds.conf" value="C:\dev\training\apache-maven-3.0.3\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_45\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.7.0_45\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\svn\bin;C:\dev\training\sonar-runner-2.3\bin;C:\dev\training\apache-maven-3.0.3\bin;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.2"/>
+    <property name="user.home" value="C:\Users\Ktran"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Ktran"/>
+    <property name="java.class.path" value="C:\dev\training\apache-maven-3.0.3\bin\..\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_45\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_45"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_45\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_45\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\dev\training\apache-maven-3.0.3\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="testisEncodeEquals_CornerCase_SecondNameJustSpace_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SOPHIE_SOFIA_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetMinRating_1_Returns5_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisEncodeEquals_CornerCase_SecondNameNothing_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SurnameCornerCase_Nulls_NoMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetMinRating_7_Return4_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SAM_SAMUEL_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisEncodeEquals_CornerCase_FirstNameNothing_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testgetMinRating_6_Returns4_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_NullValue_ReturnNullSuccessfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testleftTorightThenRightToLeft_EINSTEIN_MICHAELA_Returns0" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_STEPHEN_STEVEN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_MOSKOWITZ_MOSKOVITZ_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SurnamesCornerCase_MURPHY_Space_NoMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_OONA_OONAGH_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Forenames_SEAN_JOHN_MatchExpected" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_HAILEY_HALLEY_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_TOMASZ_TOM_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_KARL_ALESSANDRO_DoesNotMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_LIPSHITZ_LIPPSZYC_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_CATHERINE_KATHRYN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testRemoveVowel__AIDAN_Returns_ADN" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testIsVowel_CapitalA_ReturnsTrue" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testRemoveSingleDoubleConsonants_BUBLE_RemovedSuccessfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testRemoveDoubleConsonants_MISSISSIPPI_RemovedSuccessfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_MixedWithUnusualChars_SuccessfullyRemovedAndUnusualcharactersInvariant" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetEncoding_Null_to_Nothing" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompareNameSameNames_ReturnsFalseSuccessfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetMinRating_2_Returns5_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_ZACH_ZAKARIA_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_MCGOWAN_MCGEOGHEGAN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_SZLAMAWICZ_SHLAMOVITZ_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testRemoveVowel_ALESSANDRA_Returns_ALSSNDR" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_ShortNames_AL_ED_WorksButNoMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_ComprehensiveAccentMix_AllSuccessfullyRemoved" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testgetMinRating_7_Returns4_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SMITH_SMYTH_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetEncoding_HARPER_HRPR" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_STEPHEN_STEFAN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testleftTorightThenRightToLeft_ALEXANDER_ALEXANDRA_Returns4" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_MICKY_MICHAEL_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testIsVowel_SmallD_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_GerSpanFrenMix_SuccessfullyRemoved" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisEncodeEquals_CornerCase_SecondNameNull_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testgetMinRating_11_Returns_3_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetFirstLast3__ALEXANDER_Returns_Aleder" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testgetMinRating_5_Returns4_Successfully2" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_COOPERFLYNN_SUPERLYN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_PRZEMYSL_PSHEMESHIL_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompareNameNullSpace_ReturnsFalseSuccessfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetMinRating_13_Returns_1_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_BURNS_BOURNE_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemovalNormalString_NoChange" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SmallInput_CARK_Kl_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_PETERSON_PETERS_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_ROSOCHOWACIEC_ROSOKHOVATSETS_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_AUERBACH_UHRBACH_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisEncodeEquals_CornerCase_FirstNameJust1Letter_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetEncoding_NoSpace_to_Nothing" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_LongSurnames_OMUIRCHEARTAIGH_OMIREADHAIGH_SuccessfulMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testRemoveDoubleDoubleVowel_BEETLE_NotRemoved" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Forenames_UNA_OONAGH_ShouldSuccessfullyMatchButDoesNot" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_STEVEN_STEFAN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_UpperandLower_SuccessfullyRemovedAndCaseInvariant" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisEncodeEquals_CornerCase_FirstNameJustSpace_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testcleanName_SuccessfullyClean" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisEncodeEquals_CornerCase_FirstNameNull_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Forenames_SEAN_PETE_NoMatchExpected" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_COLM_COLIN_WithAccentsAndSymbolsAndSpaces_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_LongSurnames_MORIARTY_OMUIRCHEARTAIGH_DoesNotSuccessfulMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisVowel_SingleVowel_ReturnsTrue" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_OSULLIVAN_OSUILLEABHAIN_SuccessfulMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surnames_MURPHY_LYNCH_NoMatchExpected" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SEAN_SHAUN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompareNameToSingleLetter_KARL_C_DoesNotMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_FRANCISZEK_FRANCES_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetEncoding_SMYTH_to_SMYTH" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testgetMinRating_8_Returns3_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetFirstLast3_PETE_Returns_PETE" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testgetMinRating_5_Returns4_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_NINO_NoChange" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testgetMinRating_10_Returns3_Successfully" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetEncoding_One_Letter_to_Nothing" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_AllLower_SuccessfullyRemoved" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testRemoveVowel__DECLAN_Returns_DCLN" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetEncoding_Space_to_Nothing" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testisEncodeEqualsSecondNameJust1Letter_ReturnsFalse" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testGetEncoding_SMITH_to_SMTH" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testAccentRemoval_WithSpaces_SuccessfullyRemovedAndSpacesInvariant" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_Surname_LEWINSKY_LEVINSKI_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_SurnamesCornerCase_MURPHY_NoSpace_NoMatch" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testCompare_BRIAN_BRYAN_SuccessfullyMatched" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testEncodeWithInvalidObject" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testEncodeNull" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testEncodeEmpty" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+  <testcase name="testLocaleIndependence" classname="org.apache.commons.codec.language.MatchRatingApproachEncoderTest" time="0"/>
+</testsuite>

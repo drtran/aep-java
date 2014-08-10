@@ -1,0 +1,17 @@
+package com.agilejava.exercise1;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import junit.framework.TestCase;
+
+public class PawntTest {
+	@Test
+	public void testCreate() {
+		Pawn pawn = new Pawn("white");
+		assertEquals("white",pawn.getColor());
+		Pawn pawn2 = new Pawn("black");
+		assertEquals("black",pawn2.getColor());
+	}
+}

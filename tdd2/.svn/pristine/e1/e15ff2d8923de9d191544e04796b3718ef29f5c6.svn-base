@@ -1,0 +1,37 @@
+package com.bemach.tdd;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class BankAccountTest {
+
+	@Test
+	public void NewBankAccountShouldHaveZeroInBalance() {
+		BankAccount bank = new BankAccount();
+		int balance = bank.getBalance();
+		assertEquals(balance,0);
+	}
+	
+	@Test 
+	public void BankAccountShouldAllowDeposit() {
+		BankAccount bank = new BankAccount(50);
+		bank.deposit(50);
+		assertEquals(bank.getBalance(), 100);
+	}
+	
+	@Test 
+	public void BankAccountShouldAllowWithdraw() {
+		BankAccount bank = new BankAccount(50);
+		bank.withdraw(15);
+		assertEquals(bank.getBalance(), 35);
+	}
+
+	@Test 
+	public void BankAccountShouldAllowWithdrawWithPenalty() {
+		BankAccount bank = new BankAccount(50);
+		bank.withdraw(55);
+		assertEquals(bank.getBalance(), -15);
+	}
+	
+}

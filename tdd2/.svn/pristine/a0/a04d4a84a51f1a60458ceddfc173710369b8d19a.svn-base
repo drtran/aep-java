@@ -1,0 +1,22 @@
+package com.bemach.tdd;
+
+public class BankAccount {
+
+	public int balance;
+
+	public BankAccount(int i) {
+		balance = i;
+	}
+
+	public BankAccount() {
+	}
+
+	public void deposit(int i) {
+		balance = i;
+	}
+
+	public void withdraw(int i) {
+		balance -= i;
+	}
+
+}
