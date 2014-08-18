@@ -1,6 +1,8 @@
 /*
 SQLyog Community v8.7 RC
 MySQL - 5.1.52-community : Database - northwind
+create user 'csd'@'localhost' identified by 'csd';
+grant usage on northwind.* to 'csd'@'localhost';
 *********************************************************************
 */
 
