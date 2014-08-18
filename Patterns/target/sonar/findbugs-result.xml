@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="2.0.2" sequence="0" timestamp="1392662531565" analysisTimestamp="1392742149782" release="">
+  <Project>
+    <Jar>D:\training\eclipse-ws\Patterns\target\classes</Jar>
+    <AuxClasspathEntry>C:\Users\ktran\AppData\Local\Temp\findbugs4986089572308176740.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ktran\AppData\Local\Temp\findbugs3666900204983888387.jar</AuxClasspathEntry>
+    <SrcDir>D:\training\eclipse-ws\Patterns\src\main\java</SrcDir>
+    <WrkDir>D:\training\eclipse-ws\Patterns\target</WrkDir>
+  </Project>
+  <BugInstance type="LI_LAZY_INIT_STATIC" priority="2" abbrev="LI" category="MT_CORRECTNESS" instanceHash="10ba0d434abe85ecd8491ad1ff282a4c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+    <ShortMessage>Incorrect lazy initialization of static field</ShortMessage>
+    <LongMessage>Incorrect lazy initialization of static field patterns.creation.singleton.FileLogger.fileLogger in patterns.creation.singleton.FileLogger.getFileLogger()</LongMessage>
+    <Class classname="patterns.creation.singleton.FileLogger" primary="true">
+      <SourceLine classname="patterns.creation.singleton.FileLogger" start="7" end="20" sourcefile="FileLogger.java" sourcepath="patterns/creation/singleton/FileLogger.java" relSourcepath="patterns\creation\singleton\FileLogger.java">
+        <Message>At FileLogger.java:[lines 7-20]</Message>
+      </SourceLine>
+      <Message>In class patterns.creation.singleton.FileLogger</Message>
+    </Class>
+    <Method classname="patterns.creation.singleton.FileLogger" name="getFileLogger" signature="()Lpatterns/creation/singleton/FileLogger;" isStatic="true" primary="true">
+      <SourceLine classname="patterns.creation.singleton.FileLogger" start="12" end="15" startBytecode="0" endBytecode="7" sourcefile="FileLogger.java" sourcepath="patterns/creation/singleton/FileLogger.java" relSourcepath="patterns\creation\singleton\FileLogger.java"/>
+      <Message>In method patterns.creation.singleton.FileLogger.getFileLogger()</Message>
+    </Method>
+    <Field classname="patterns.creation.singleton.FileLogger" name="fileLogger" signature="Lpatterns/creation/singleton/FileLogger;" isStatic="true" primary="true" role="FIELD_ON">
+      <SourceLine classname="patterns.creation.singleton.FileLogger" sourcefile="FileLogger.java" sourcepath="patterns/creation/singleton/FileLogger.java" relSourcepath="patterns\creation\singleton\FileLogger.java">
+        <Message>In FileLogger.java</Message>
+      </SourceLine>
+      <Message>On field patterns.creation.singleton.FileLogger.fileLogger</Message>
+    </Field>
+    <SourceLine classname="patterns.creation.singleton.FileLogger" primary="true" start="12" end="13" startBytecode="0" endBytecode="13" sourcefile="FileLogger.java" sourcepath="patterns/creation/singleton/FileLogger.java" relSourcepath="patterns\creation\singleton\FileLogger.java">
+      <Message>At FileLogger.java:[lines 12-13]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="MT_CORRECTNESS">
+    <Description>Multithreaded correctness</Description>
+  </BugCategory>
+  <BugPattern type="LI_LAZY_INIT_STATIC" abbrev="LI" category="MT_CORRECTNESS" cweid="543">
+    <ShortDescription>Incorrect lazy initialization of static field</ShortDescription>
+    <Details><![CDATA[
+
+<p> This method contains an unsynchronized lazy initialization of a non-volatile static field.
+Because the compiler or processor may reorder instructions,
+threads are not guaranteed to see a completely initialized object,
+<em>if the method can be called by multiple threads</em>.
+You can make the field volatile to correct the problem.
+For more information, see the
+<a href="http://www.cs.umd.edu/~pugh/java/memoryModel/">Java Memory Model web site</a>.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="LI">
+    <Description>Unsynchronized Lazy Initialization</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 17 Feb 2014 13:42:11 -0500" total_classes="35" referenced_classes="47" total_bugs="1" total_size="257" num_packages="5" vm_version="R28.2.5-20-152429-1.6.0_37-20120927-1915-windows-x86_64" cpu_seconds="2.20" clock_seconds="1.98" peak_mbytes="188.03" alloc_mbytes="3072.00" gc_seconds="0.13" priority_2="1">
+    <FileStats path="patterns/creation/abstractfactory/AbstractFactory.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/abstractfactory/ConcreteFactory_1.java" bugCount="0" size="7"/>
+    <FileStats path="patterns/creation/abstractfactory/ConcreteFactory_2.java" bugCount="0" size="7"/>
+    <FileStats path="patterns/creation/abstractfactory/Main.java" bugCount="0" size="13"/>
+    <FileStats path="patterns/creation/abstractfactory/Product_A.java" bugCount="0" size="1"/>
+    <FileStats path="patterns/creation/abstractfactory/Product_A1.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/abstractfactory/Product_A2.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/abstractfactory/Product_B.java" bugCount="0" size="1"/>
+    <FileStats path="patterns/creation/abstractfactory/Product_B1.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/abstractfactory/Product_B2.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/builder/Builder.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/builder/BuilderFactory.java" bugCount="0" size="10"/>
+    <FileStats path="patterns/creation/builder/Component.java" bugCount="0" size="9"/>
+    <FileStats path="patterns/creation/builder/Component_A.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/builder/Component_B.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/builder/ConcreteBuilder_1.java" bugCount="0" size="7"/>
+    <FileStats path="patterns/creation/builder/ConcreteBuilder_2.java" bugCount="0" size="7"/>
+    <FileStats path="patterns/creation/builder/Main.java" bugCount="0" size="15"/>
+    <FileStats path="patterns/creation/builder/NewComponent_A.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/builder/NewComponent_B.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/factorymethod/ConcreteCreator.java" bugCount="0" size="12"/>
+    <FileStats path="patterns/creation/factorymethod/Creator.java" bugCount="0" size="2"/>
+    <FileStats path="patterns/creation/factorymethod/Main.java" bugCount="0" size="11"/>
+    <FileStats path="patterns/creation/factorymethod/ParentClass.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/factorymethod/SubClass_1.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/factorymethod/SubClass_2.java" bugCount="0" size="3"/>
+    <FileStats path="patterns/creation/prototype/Car.java" bugCount="0" size="11"/>
+    <FileStats path="patterns/creation/prototype/Main.java" bugCount="0" size="35"/>
+    <FileStats path="patterns/creation/prototype/Person.java" bugCount="0" size="22"/>
+    <FileStats path="patterns/creation/prototype/PersonWithDeepCopy.java" bugCount="0" size="7"/>
+    <FileStats path="patterns/creation/singleton/ConsoleLogger.java" bugCount="0" size="6"/>
+    <FileStats path="patterns/creation/singleton/FileLogger.java" bugCount="1" size="12" bugHash="d7bf76aa6c637afb5b2ddd85c98dff5d"/>
+    <FileStats path="patterns/creation/singleton/Logger.java" bugCount="0" size="2"/>
+    <FileStats path="patterns/creation/singleton/LoggerFactory.java" bugCount="0" size="12"/>
+    <FileStats path="patterns/creation/singleton/Main.java" bugCount="0" size="9"/>
+    <PackageStats package="patterns.creation.abstractfactory" total_bugs="0" total_types="10" total_size="44">
+      <ClassStats class="patterns.creation.abstractfactory.AbstractFactory" sourceFile="AbstractFactory.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.ConcreteFactory_1" sourceFile="ConcreteFactory_1.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.ConcreteFactory_2" sourceFile="ConcreteFactory_2.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.Main" sourceFile="Main.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.Product_A" sourceFile="Product_A.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.Product_A1" sourceFile="Product_A1.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.Product_A2" sourceFile="Product_A2.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.Product_B" sourceFile="Product_B.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.Product_B1" sourceFile="Product_B1.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.abstractfactory.Product_B2" sourceFile="Product_B2.java" interface="false" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="patterns.creation.builder" total_bugs="0" total_types="10" total_size="63">
+      <ClassStats class="patterns.creation.builder.Builder" sourceFile="Builder.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.BuilderFactory" sourceFile="BuilderFactory.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.Component" sourceFile="Component.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.Component_A" sourceFile="Component_A.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.Component_B" sourceFile="Component_B.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.ConcreteBuilder_1" sourceFile="ConcreteBuilder_1.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.ConcreteBuilder_2" sourceFile="ConcreteBuilder_2.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.Main" sourceFile="Main.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.NewComponent_A" sourceFile="NewComponent_A.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.builder.NewComponent_B" sourceFile="NewComponent_B.java" interface="false" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="patterns.creation.factorymethod" total_bugs="0" total_types="6" total_size="34">
+      <ClassStats class="patterns.creation.factorymethod.ConcreteCreator" sourceFile="ConcreteCreator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="patterns.creation.factorymethod.Creator" sourceFile="Creator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="patterns.creation.factorymethod.Main" sourceFile="Main.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="patterns.creation.factorymethod.ParentClass" sourceFile="ParentClass.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.factorymethod.SubClass_1" sourceFile="SubClass_1.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="patterns.creation.factorymethod.SubClass_2" sourceFile="SubClass_2.java" interface="false" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="patterns.creation.prototype" total_bugs="0" total_types="4" total_size="75">
+      <ClassStats class="patterns.creation.prototype.Car" sourceFile="Car.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="patterns.creation.prototype.Main" sourceFile="Main.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="patterns.creation.prototype.Person" sourceFile="Person.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="patterns.creation.prototype.PersonWithDeepCopy" sourceFile="PersonWithDeepCopy.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="patterns.creation.singleton" total_bugs="1" total_types="5" total_size="41" priority_2="1">
+      <ClassStats class="patterns.creation.singleton.ConsoleLogger" sourceFile="ConsoleLogger.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="patterns.creation.singleton.FileLogger" sourceFile="FileLogger.java" interface="false" size="12" bugs="1" priority_2="1"/>
+      <ClassStats class="patterns.creation.singleton.Logger" sourceFile="Logger.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="patterns.creation.singleton.LoggerFactory" sourceFile="LoggerFactory.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="patterns.creation.singleton.Main" sourceFile="Main.java" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="182" invocations="357" avgMicrosecondsPerInvocation="510" maxMicrosecondsPerInvocation="27892" standardDeviationMircosecondsPerInvocation="1790"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="82" invocations="10" avgMicrosecondsPerInvocation="8202" maxMicrosecondsPerInvocation="78757" standardDeviationMircosecondsPerInvocation="23526"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="76" invocations="360" avgMicrosecondsPerInvocation="211" maxMicrosecondsPerInvocation="4021" standardDeviationMircosecondsPerInvocation="226"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="52" invocations="67" avgMicrosecondsPerInvocation="788" maxMicrosecondsPerInvocation="48575" standardDeviationMircosecondsPerInvocation="5885"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="51" invocations="47" avgMicrosecondsPerInvocation="1102" maxMicrosecondsPerInvocation="27363" standardDeviationMircosecondsPerInvocation="4041"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="49" invocations="61" avgMicrosecondsPerInvocation="815" maxMicrosecondsPerInvocation="33478" standardDeviationMircosecondsPerInvocation="4294"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="41" invocations="62" avgMicrosecondsPerInvocation="664" maxMicrosecondsPerInvocation="22067" standardDeviationMircosecondsPerInvocation="2905"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="40" invocations="64" avgMicrosecondsPerInvocation="631" maxMicrosecondsPerInvocation="26928" standardDeviationMircosecondsPerInvocation="3345"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="39" invocations="61" avgMicrosecondsPerInvocation="653" maxMicrosecondsPerInvocation="27190" standardDeviationMircosecondsPerInvocation="3451"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="38" invocations="61" avgMicrosecondsPerInvocation="628" maxMicrosecondsPerInvocation="19301" standardDeviationMircosecondsPerInvocation="2525"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="24" invocations="57" avgMicrosecondsPerInvocation="434" maxMicrosecondsPerInvocation="17537" standardDeviationMircosecondsPerInvocation="2325"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="24" invocations="35" avgMicrosecondsPerInvocation="689" maxMicrosecondsPerInvocation="20606" standardDeviationMircosecondsPerInvocation="3424"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="23" invocations="318" avgMicrosecondsPerInvocation="74" maxMicrosecondsPerInvocation="3719" standardDeviationMircosecondsPerInvocation="260"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="21" invocations="47" avgMicrosecondsPerInvocation="463" maxMicrosecondsPerInvocation="12787" standardDeviationMircosecondsPerInvocation="1895"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="21" invocations="61" avgMicrosecondsPerInvocation="356" maxMicrosecondsPerInvocation="11259" standardDeviationMircosecondsPerInvocation="1440"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="19" invocations="47" avgMicrosecondsPerInvocation="424" maxMicrosecondsPerInvocation="6178" standardDeviationMircosecondsPerInvocation="1085"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LazyInit" totalMilliseconds="19" invocations="35" avgMicrosecondsPerInvocation="561" maxMicrosecondsPerInvocation="17826" standardDeviationMircosecondsPerInvocation="2974"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="14" invocations="35" avgMicrosecondsPerInvocation="425" maxMicrosecondsPerInvocation="12141" standardDeviationMircosecondsPerInvocation="2016"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="14" invocations="35" avgMicrosecondsPerInvocation="412" maxMicrosecondsPerInvocation="12539" standardDeviationMircosecondsPerInvocation="2080"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="14" invocations="35" avgMicrosecondsPerInvocation="409" maxMicrosecondsPerInvocation="9434" standardDeviationMircosecondsPerInvocation="1648"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="13" invocations="47" avgMicrosecondsPerInvocation="279" maxMicrosecondsPerInvocation="5006" standardDeviationMircosecondsPerInvocation="861"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="11" invocations="47" avgMicrosecondsPerInvocation="239" maxMicrosecondsPerInvocation="6706" standardDeviationMircosecondsPerInvocation="976"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

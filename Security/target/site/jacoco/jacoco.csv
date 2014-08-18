@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Security,com.bemach.security.samples,KeyStoreEncrypter,438,0,8,0,126,0,32,0,28,0
+Security,com.bemach.security.samples,VerifyPassword,24,0,0,0,7,0,2,0,2,0
+Security,com.bemach.security.samples,SpringConfigEncrypter,83,0,2,0,22,0,6,0,5,0
+Security,com.bemach.security.samples,KeystoreInformation,580,0,42,0,120,0,35,0,14,0
+Security,com.bemach.security.samples,CredentialsFileUtil,6,0,0,0,3,0,3,0,3,0

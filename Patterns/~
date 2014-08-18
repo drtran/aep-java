@@ -1,0 +1,63 @@
+# Required metadata
+sonar.projectKey=SWP
+sonar.projectName=Formulator
+sonar.projectVersion=1.0
+ 
+# Paths to source directories.
+# Paths are relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+# Do not put the "sonar-project.properties" file in the same directory with the source code.
+# (i.e. never set the "sonar.sources" property to ".")
+# sonar.sources=Mosaic
+
+# sonar.core.codeCoveragePlugin=jacoco
+# sonar.jacoco.reportPath=target/site/jacoco
+# sonar.dynamicAnalysis=reuseReports
+# sonar.surefire.reportsPath=target/surefire-reports
+
+ 
+# The value of the property must be the key of the language.
+# sonar.language=java
+sonar.sources=.
+sonar.language=cs
+
+# Core C# Settings:
+sonar.dotnet.visualstudio.solution.file=SW.Mosaic.Formulator.sln
+# sonar.modules=SW.Color.Common
+
+# sonar.silverlight.4.mscorlib.location=c:/
+sonar.dotnet.excludeGeneratedcode=true
+sonar.dotnet.4.0.sdk.directory=c:/Windows/Micrsoft.NET/Framework/V4.0.30319
+sonar.dotnet.version=4.0
+
+# To prevent any issues while analyzing multiple solutions containing projects with similar keys
+# Will be set by default to safe starting at version 2.2: http://jira.codehaus.org/browse/SONARDOTNT-339
+sonar.dotnet.key.generation.strategy=safe
+
+# Gendarme
+sonar.gendarme.mode=skip
+
+# Gallio / Unit Tests
+sonar.gallio.mode=
+sonar.gallio.coverage.tool=OpenCover
+sonar.gallio.runner=Local
+# sonar.dotnet.visualstudio.testProjectPattern=*UnitTest*;Testing*
+sonar.dotnet.visualstudio.testProjectPattern=*.Tests
+sonar.opencover.installDirectory=F:/dev/training/opencover.4.5.2506/
+sonar.dotnet.test.assemblies=$(SolutionDir)/SW.Mosaic.Formulator.Tests/bin/Debug/SW.Mosaic.Formulator.Tests.dll
+# sonar.stylecop.projectFilePath=.
+# FXCop 
+sonar.fxcop.mode=skip 
+sonar.cs.fxcop.assembly=SW.Mosaic.Forumator.Common/bin/Debug/Sw.Mosaic.Formulator..Common.dll
+
+# StyleCop 
+sonar.stylecop.mode=skip
+
+# NDeps
+sonar.ndeps.mode=skip
+ 
+# Encoding of the source code
+sonar.sourceEncoding=UTF-8
+ 
+# Additional parameters
+sonar.my.property=value
+
