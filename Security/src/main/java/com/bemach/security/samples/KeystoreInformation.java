@@ -39,7 +39,7 @@ public class KeystoreInformation implements Serializable {
 	}
 	
 	protected KeystoreInformation () {
-		StringBuffer ksDir = new StringBuffer(System.getProperty("dcapes.config.directory"));
+		StringBuffer ksDir = new StringBuffer(System.getProperty("config.directory"));
 		ksDir.append(File.separatorChar).append("keystore").append(File.separatorChar);
 		configFile = ksDir.toString() + configFile;
 		File f = new File(configFile);
@@ -53,7 +53,7 @@ public class KeystoreInformation implements Serializable {
 			return;
 		}
 		
-		String prop = System.getProperty("dcapes.keystore");
+		String prop = System.getProperty("keystore");
 		if (prop != null && prop.trim().length() > 0)
 			keystore = prop;
 		keystore = ksDir.toString() + keystore;
@@ -63,7 +63,7 @@ public class KeystoreInformation implements Serializable {
 			return;
 		}
 		
-		prop = System.getProperty("dcapes.keyalias");
+		prop = System.getProperty("keyalias");
 		if (prop != null && prop.trim().length() > 0)
 			alias = prop;
 		gatherKSRelatedInfo();

@@ -99,8 +99,6 @@ public class KeyStoreEncrypter implements Encryption {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see mil.af.dcapes.common.security.IEncryption#decrypt(byte[],
-	 * java.lang.String)
 	 */
 	public String decrypt(byte[] keyValue, String encryptedText64) throws Exception {
 		try {

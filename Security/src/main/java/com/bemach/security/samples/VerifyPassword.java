@@ -7,9 +7,6 @@ import java.net.PasswordAuthentication;
  * This class is created for using with HTTP basic authentication.
  * 
  * You need a user ID and password for the authentication.
- * 
- * This class will be used for troubleshooting SSL/WS problem in the field
- * Currently, DCAPES application does not use this. Maybe until JVM 1.6
  *
  */
 public class VerifyPassword extends Authenticator {
@@ -17,7 +14,6 @@ public class VerifyPassword extends Authenticator {
 	private String password = null;
  	
 	/**
-	 * Construct a DcapesPasswordAuthentication object.
 	 * 
 	 * @param userId
 	 * @param password
