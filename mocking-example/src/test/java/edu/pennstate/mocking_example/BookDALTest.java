@@ -1,4 +1,4 @@
-package com.bemach.mocking;
+package edu.pennstate.mocking_example;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -10,8 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public class 
- {
+public class BookDALTest {
 	private static BookDAL mockedBookDAL;
 	private static Book book1;
 	private static Book book2;
