@@ -6,10 +6,10 @@ REM
 
 REM **** JAVA ****
 REM
-SET JAVA_HOME=C:\Program Files\Java\jdk1.7.0_45
+SET JAVA_HOME=C:\Program Files\Java\jdk1.7.0_55
 SET PATH=%JAVA_HOME%\bin;%PATH%
 
-SET TRAINING_HOME=C:\dev\aep
+SET TRAINING_HOME=C:\dev
 
 REM **** SONAR ****
 SET SONAR_RUNNER=%TRAINING_HOME%\sonar-runner-2.3
