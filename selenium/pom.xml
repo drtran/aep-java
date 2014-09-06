@@ -27,36 +27,6 @@
 
 	<dependencies>
 
-
-		<!-- jar needed for running JSFUnit under Arquillian. For Cactus, replace 
-			the artifactId with jsfunit-cactus -->
-		<dependency>
-			<groupId>org.jboss.jsfunit</groupId>
-			<artifactId>jsfunit-arquillian</artifactId>
-			<version>2.0.0.Beta2</version>
-		</dependency>
-
-		<!-- RichFaces and Ajax4jsf Client jar -->
-		<dependency>
-			<groupId>org.jboss.jsfunit</groupId>
-			<artifactId>jboss-jsfunit-richfaces</artifactId>
-			<version>2.0.0.Beta2</version>
-		</dependency>
-
-		<!-- Ant task used to "jsfunify" a WAR file -->
-		<dependency>
-			<groupId>org.jboss.jsfunit</groupId>
-			<artifactId>jboss-jsfunit-ant</artifactId>
-			<version>2.0.0.Beta2</version>
-		</dependency>
-
-
-		<!-- JSFUnit Static Analysis Tools -->
-		<dependency>
-			<groupId>org.jboss.jsfunit</groupId>
-			<artifactId>jboss-jsfunit-analysis</artifactId>
-			<version>2.0.0.Beta2</version>
-		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -70,16 +40,26 @@
 			<version>2.42.2</version>
 		</dependency>
 		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
+			<version>2.42.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opera</groupId>
+			<artifactId>operadriver</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>4.3.5</version>
 		</dependency>
 
 	</dependencies>
+
 	<build>
 		<finalName>tutorial</finalName>
 	</build>
-
-
 
 </project>
