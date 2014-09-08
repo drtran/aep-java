@@ -1,4 +1,4 @@
-3package com.bemach.mocking;
+package com.bemach.mocking;
 
 import java.util.Collections;
 import java.util.List;

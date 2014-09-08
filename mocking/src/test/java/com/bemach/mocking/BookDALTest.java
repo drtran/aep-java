@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public class 
+public class BookDALTest
  {
 	private static BookDAL mockedBookDAL;
 	private static Book book1;

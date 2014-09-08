@@ -22,6 +22,7 @@ public class adopting_puppies_steps {
 	
 	@Before
 	public void setup() {
+		System.setProperty("webdriver.chrome.driver", "/Users/ktran/bin/chromedriver");
 		driver = new ChromeDriver();
 	}
 	
