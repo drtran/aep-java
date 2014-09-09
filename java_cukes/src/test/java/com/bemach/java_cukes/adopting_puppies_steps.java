@@ -20,8 +20,8 @@ public class adopting_puppies_steps {
 	@Before
 	public void setup() {
 		// Change for Windows user
-		// System.setProperty("webdriver.chrome.driver", "C:/Windows/System32/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "/Users/ktran/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:/aep-java/chromedriver.exe");
+		// System.setProperty("webdriver.chrome.driver", "/Users/ktran/bin/chromedriver");
 		driver = new ChromeDriver();
 	}
 	
