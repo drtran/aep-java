@@ -1,7 +1,6 @@
 package com.bemach.java_cukes;
 
 import java.util.List;
-import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -22,6 +19,9 @@ public class adopting_puppies_steps {
 	
 	@Before
 	public void setup() {
+		// Change for Windows user
+		System.setProperty("webdriver.chrome.driver", "C:/aep-java/chromedriver.exe");
+		// System.setProperty("webdriver.chrome.driver", "/Users/ktran/bin/chromedriver");
 		driver = new ChromeDriver();
 	}
 	
