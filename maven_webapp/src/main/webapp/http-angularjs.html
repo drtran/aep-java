@@ -15,12 +15,7 @@
             text-decoration: underline ;
         }
  
-    </style>
-    
-    <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
-	<script type="text/javascript" src="friends-app.js"></script>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	
+    </style>	
 </head>
 <body ng-controller="DemoController">
  
@@ -55,4 +50,29 @@
  
  
 </body>
+<script>
+    /* Beginning of async download code. */
+    window.onload = function(){
+        function loadjscssfile(filename, filetype) {
+            if(filetype == "js") {
+                var cssNode = document.createElement('script');
+                cssNode.setAttribute("type", "text/javascript");
+                cssNode.setAttribute("src", filename);
+            } else if(filetype == "css") {
+                var cssNode = document.createElement("link");
+                cssNode.setAttribute("rel", "stylesheet");
+                cssNode.setAttribute("type", "text/css");
+                cssNode.setAttribute("href", filename);
+            }
+            if(typeof cssNode != "undefined")
+                document.getElementsByTagName("head")[0].appendChild(cssNode);
+        }
+        loadjscssfile("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", "css");
+        loadjscssfile("//fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese", "css");
+        loadjscssfile("/css/style.css", "css");
+        loadjscssfile("//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js", "js");
+        loadjscssfile("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js", "js");
+    };
+    /* End of async download code. */
+</script>
 </html>

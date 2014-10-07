@@ -10,11 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-<<<<<<< HEAD
-public class  BookDALTest
-=======
 public class BookDALTest
->>>>>>> 2b7a45d839ce8aeec83eeaf947bc6e85dc975849
+
  {
 	private static BookDAL mockedBookDAL;
 	private static Book book1;

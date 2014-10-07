@@ -10,16 +10,12 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TestPuppiesWebSite {
 	public static void main(String[] args){
-<<<<<<< HEAD
-		//System.setProperty("webdriver.chrome.driver", "/Users/ktran/bin/chromedriver");
-=======
 		System.setProperty("webdriver.chrome.driver", "c:/aep-java/chromedriver.exe");
->>>>>>> 2b7a45d839ce8aeec83eeaf947bc6e85dc975849
+
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://puppies.herokuapp.com");
 		
 		System.out.println("Getting web elements ..");
-		// List<WebElement> allWebEs = driver.findElements(By.className("name"));
 		List<WebElement> names = driver.findElements(By.xpath("//div[@class='name']"));
 		List<WebElement> values = driver.findElements(By.xpath("//input[@value='View Details']"));
 		
