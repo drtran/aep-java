@@ -2,6 +2,7 @@ package com.bemach.java_cukes;
 
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +21,7 @@ public class adopting_puppies_steps {
 	@Before
 	public void setup() {
 		// Change for Windows user
-		System.setProperty("webdriver.chrome.driver", "C:/aep-java/chromedriver.exe");
+		// System.setProperty("webdriver.chrome.driver", "C:/csd/aep-java/chromedriver.exe");
 		// System.setProperty("webdriver.chrome.driver", "/Users/ktran/bin/chromedriver");
 		driver = new ChromeDriver();
 	}
@@ -28,6 +29,10 @@ public class adopting_puppies_steps {
 	@Given("^I am on the puppy adoption site$")
 	public void I_am_on_the_puppy_adoption_site() throws Throwable {
 		driver.get("http://puppies.herokuapp.com");
+		
+		WebElement mainPage = driver.findElement(By.xpath("//*[@id='intro']/div/h1/span"));
+		//Assert.assertTrue("Home of theddd".equals(mainPage.getText()));
+		Assert.assertEquals("Home of the", mainPage.getText());
 	}
 	
 	@When("^I click the View Details button for \"([^\"]*)\"$")
@@ -108,6 +113,7 @@ public class adopting_puppies_steps {
 	@Then("^I should see \"([^\"]*)\"$")
 	public void I_should_see(String note) throws Throwable {
 		WebElement thankYouNote = driver.findElement(By.xpath("//p[@id='notice']"));
+		Assert.assertTrue(note.equals(thankYouNote.getText()));
 		if (note.equals(thankYouNote.getText())) {
 			System.out.println("Test was a SUCCESS!");
 		} else {
@@ -119,4 +125,11 @@ public class adopting_puppies_steps {
 	public void destroy() {
 		driver.close();
 	}
+	
+	@Then("^I should see \"([^\"]*)\" error message$")
+	public void I_should_see_error_message(String errMsg) throws Throwable {
+		WebElement errMsgElem = driver.findElement(By.xpath("//*[@id='error_explanation']/ul/li[1]"));
+		Assert.assertTrue(errMsg.equals(errMsgElem.getText()));
+	}
+
 }

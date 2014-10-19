@@ -6,9 +6,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(format = {"html:target/cucumber-html","junit:target/cucumber-junit/Webpage.xml"},
+@CucumberOptions(format = {"html:target/cucumber-html","junit:target/cucumber-junit/Webpage.xml", "pretty"},
 				 features = "src/test/resources/com/bemach/java_cukes",
-				 tags = "@scenario-1, @scenario-2")
+				 tags = "@scenario-3")
 public class RunCukesTest {
 
 }

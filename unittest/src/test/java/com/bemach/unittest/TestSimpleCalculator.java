@@ -4,11 +4,14 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestSimpleCalculator {
 	private SimpleCalculator simpleCalculator;
 
+	@BeforeClass
+	
 	@Before
 	public void SetUp() {
 		simpleCalculator = new SimpleCalculator();
