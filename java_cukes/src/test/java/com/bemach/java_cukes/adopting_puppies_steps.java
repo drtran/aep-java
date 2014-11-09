@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import cucumber.api.java.After;
@@ -16,14 +15,18 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class adopting_puppies_steps {
-	private WebDriver driver;
+	WebDriver driver;
+	private Browser browser;
 	
 	@Before
 	public void setup() {
-		// Change for Windows user
-		// System.setProperty("webdriver.chrome.driver", "C:/csd/aep-java/chromedriver.exe");
-		// System.setProperty("webdriver.chrome.driver", "/Users/ktran/bin/chromedriver");
-		driver = new ChromeDriver();
+		browser = new Browser();
+		driver = browser.getDriver();
+	}
+	
+	@After
+	public void tearDown() {
+		browser.close();
 	}
 	
 	@Given("^I am on the puppy adoption site$")
@@ -121,10 +124,6 @@ public class adopting_puppies_steps {
 		}
 	}
 	
-	@After
-	public void destroy() {
-		driver.close();
-	}
 	
 	@Then("^I should see \"([^\"]*)\" error message$")
 	public void I_should_see_error_message(String errMsg) throws Throwable {
