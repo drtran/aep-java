@@ -1,4 +1,4 @@
-package patterns.creation.factorymethod;
+package patterns.creation.factorymethod_2;
 
 public class Main {
 
