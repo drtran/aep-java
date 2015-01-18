@@ -1,5 +1,10 @@
 package patterns.structural.decorator;
 
+/**
+ * 
+ * source: http://www.tutorialspoint.com/design_pattern
+ *
+ */
 public class DecoratorPatternDemo {
 	public static void main(String[] args) {
 
