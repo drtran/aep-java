@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TestPuppiesWebSite {
 	public static void main(String[] args){
-		System.setProperty("webdriver.chrome.driver", "c:/csd/aep-java/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/csd2015/bin/browser-drivers/chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://puppies.herokuapp.com");
