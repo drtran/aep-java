@@ -1,4 +1,4 @@
-package patterns.creation.abstractfactory;
+package patterns.creation.abstractfactory_2;
 
 public class Main {
 

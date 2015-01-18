@@ -1,6 +1,6 @@
 package patterns.creation.abstractfactory;
 
-public interface AbstractFactory {
-	public Product_A createProduct_A();
-	public Product_B creaetProduct_B();
+public abstract class AbstractFactory {
+	abstract Color getColor(String color);
+	abstract Shape getShape(String shape);
 }
