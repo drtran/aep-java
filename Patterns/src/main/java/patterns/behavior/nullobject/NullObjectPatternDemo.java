@@ -3,7 +3,7 @@ package patterns.behavior.nullobject;
 /**
  * 
  * source: http://www.tutorialspoint.com/design_pattern/null_object_pattern.htm
- *
+ *   
  */
 public class NullObjectPatternDemo {
 	public static void main(String[] args) {
