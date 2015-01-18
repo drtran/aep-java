@@ -3,7 +3,15 @@ package patterns.structural.composite;
 /**
  * 
  * source: http://www.tutorialspoint.com/design_pattern/composite_pattern.htm
- *
+ * 
+ * from: http://sourcemaking.com/design_patterns/composite
+ * 
+ * Application needs to manipulate a hierarchical collection of 
+ * "primitive" and "composite" objects. Processing of a primitive object 
+ * is handled one way, and processing of a composite object is handled 
+ * differently. Having to query the "type" of each object before attempting 
+ * to process it is not desirable.
+ * 
  */
 public class CompositePatternDemo {
 	public static void main(String[] args) {
