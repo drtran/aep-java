@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1393636171095
-Build-Jdk: 1.7.0_45
-Built-By: Ktran
+Bnd-LastModified: 1431333434934
+Build-Jdk: 1.7.0_51
+Built-By: ktran
 Bundle-Description: The Apache Commons Codec package contains simple enc
  oder and decoders for     various formats such as Base64 and Hexadecima
  l.  In addition to these     widely used encoders and decoders, the cod
