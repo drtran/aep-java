@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SelectTest {
 	private WebDriver driver;
@@ -20,7 +21,7 @@ public class SelectTest {
 
 	@Before
 	public void setUp() {
-		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 		driver.get("file:///C:/csd2015/sample-code/aep-java/selenium/src/main/webapp/select.html");
 		select = driver.findElement(By.id("select1"));
 		options = select.findElements(By.tagName("option"));

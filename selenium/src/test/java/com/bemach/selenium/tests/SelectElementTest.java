@@ -3,6 +3,7 @@ package com.bemach.selenium.tests;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 import org.junit.After;
@@ -11,8 +12,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+
+import com.bemach.selenium.tests.DriverUtil.DRIVER_TYPE;
 
 public class SelectElementTest {
 	private WebDriver driver;
@@ -21,8 +23,14 @@ public class SelectElementTest {
 	private Select select;
 
 	@Before
-	public void setUp() {
-		driver = new ChromeDriver();
+	public void setUp() throws MalformedURLException {
+		System.setProperty("REMOTE_BROWSER", "TRUE");
+		if (Boolean.valueOf(System.getProperty("REMOTE_BROWSER"))) {
+			driver = DriverUtil.getDriver(DRIVER_TYPE.REMOTE);
+		} else {
+			driver = DriverUtil.getDriver(DRIVER_TYPE.LOCAL);
+		}
+		
 		driver.get("file:///C:/csd2015/sample-code/aep-java/selenium/src/main/webapp/select.html");
 		selectElement = driver.findElement(By.id("select1"));
 		options = selectElement.findElements(By.tagName("option"));
@@ -31,8 +39,9 @@ public class SelectElementTest {
 	
 	@After
 	public void tearDown () {
-		driver.close();
+		DriverUtil.quit(driver);
 	}
+
 	
 	@Test 
 	public void shouldSelectOption() {
