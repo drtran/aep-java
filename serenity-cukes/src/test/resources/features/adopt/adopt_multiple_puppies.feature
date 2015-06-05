@@ -25,9 +25,10 @@ Feature: Adopting multiple puppies
       | <pet3> |
     And I pay for the adoption using this type of payment:
       | paymentType | orderName   | orderAddress    | orderEmail         |
-      | Check       | Mr. Baloney | 123 Main Street | baloney@sleezy.com |
+      | <payment>   | Mr. Baloney | 123 Main Street | baloney@sleezy.com |
     Then I should be back at the main page with a thank you note, "Thank you for adopting a puppy!"
   Examples:
-  	| pet1  | pet2  | pet3    |
-  	| Hanna | Topsy | Twinkie |
-  
+  	| pet1     | pet2   | pet3    | payment     |
+  	| Hanna    | Topsy  | Twinkie | Check       |
+  	| Ruby Sue | Sparky | Spud    | Credit card |
+  	
