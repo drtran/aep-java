@@ -9,22 +9,22 @@ import org.openqa.selenium.support.ui.Select;
 import com.bemach.bdd.serenity_cukes.steps.PaymentInfo;
 
 public class PaymentPage extends PageObject {
-	@FindBy (tagName = "legend", timeoutInSeconds="1")
+	@FindBy (tagName = "legend")
 	WebElement legend;
 	
-	@FindBy (id = "order_name", timeoutInSeconds="1")
+	@FindBy (id = "order_name")
 	WebElement orderName;
 	
-	@FindBy (id = "order_address", timeoutInSeconds="1") 
+	@FindBy (id = "order_address") 
 	WebElement orderAddress;
 	
-	@FindBy (id = "order_email", timeoutInSeconds="1") 
+	@FindBy (id = "order_email") 
 	WebElement orderEmail;
 	
-	@FindBy (id = "order_pay_type", timeoutInSeconds="1") 
+	@FindBy (id = "order_pay_type") 
 	WebElement orderPayType;
 	
-	@FindBy (xpath = "//input[@value='Place Order']", timeoutInSeconds="1") 
+	@FindBy (xpath = "//input[@value='Place Order']") 
 	WebElement placeOrder;
 
 	public void payForAdoption(PaymentInfo payment) {

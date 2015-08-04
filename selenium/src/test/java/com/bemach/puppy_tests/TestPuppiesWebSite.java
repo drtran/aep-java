@@ -1,6 +1,7 @@
 package com.bemach.puppy_tests;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,10 +11,12 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TestPuppiesWebSite {
 	public static void main(String[] args){
+		// change to point where you store chromedrive.exe.
 		System.setProperty("webdriver.chrome.driver", "C:/csdwin/bin/browser-drivers/chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost:3000");
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		System.out.println("Getting web elements ..");
 		List<WebElement> names = driver.findElements(By.xpath("//div[@class='name']"));

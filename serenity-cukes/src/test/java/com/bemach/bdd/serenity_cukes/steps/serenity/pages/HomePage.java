@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 @DefaultUrl("http://localhost:3000")
 public class HomePage extends PageObject {
 
-	@FindBy (id = "notice", timeoutInSeconds="1")
+	@FindBy (id = "notice")
 	WebElement notice;
 	
 	public String getWebsiteUrl() {

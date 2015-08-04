@@ -7,7 +7,7 @@ import net.serenitybdd.core.pages.PageObject;
 
 public class ViewDetailPage extends PageObject {
 
-	@FindBy (xpath = "//input[@value='Adopt Me!']", timeoutInSeconds="2")
+	@FindBy (xpath = "//input[@value='Adopt Me!']")
 	WebElement adoptMe;
 	
 	public void adoptPuppy() {
