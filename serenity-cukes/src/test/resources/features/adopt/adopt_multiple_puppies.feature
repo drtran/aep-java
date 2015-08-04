@@ -3,7 +3,7 @@ Feature: Adopting multiple puppies
   As a pet owner,
   I want to adopt two puppies
   
-
+  @Wip
   Scenario: Adopting two puppies from the website.
     Given that I am at the website "http://localhost:3000"
     When I adopt for these pets, 

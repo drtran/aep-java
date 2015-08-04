@@ -15,16 +15,16 @@ public class AdoptionPage extends PageObject {
 	private CompletingAdoptionPage completingAdoptionPage;
 	private PaymentPage paymentPage;
 
-	@FindBy(className = "name")
+	@FindBy(className = "name", timeoutInSeconds="2")
 	List<WebElement> pets;
 	
-	@FindBy(className = "next_page")
+	@FindBy(className = "next_page", timeoutInSeconds="2")
 	WebElement nextButton;
 	
-	@FindBy(xpath = "//input[@value='View Details']")
+	@FindBy(xpath = "//input[@value='View Details']", timeoutInSeconds="2")
 	List<WebElement> viewDetails;
 
-	@FindBy(xpath = "//span[@class='next_page disabled']")
+	@FindBy(xpath = "//span[@class='next_page disabled']", timeoutInSeconds="2")
 	List<WebElement> nextButtonDisabledList;
 
 	public void adoptThePuppy(String puppyName) {

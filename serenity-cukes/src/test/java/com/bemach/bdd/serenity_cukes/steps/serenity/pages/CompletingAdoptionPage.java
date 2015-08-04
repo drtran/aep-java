@@ -6,13 +6,13 @@ import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 
 public class CompletingAdoptionPage extends PageObject {
-	@FindBy (xpath = "//input[@value='Complete the Adoption']")
+	@FindBy (xpath = "//input[@value='Complete the Adoption']", timeoutInSeconds="1")
 	WebElement completeTheAdoptionButton;
 
-	@FindBy (xpath = "//input[@value='Adopt Another Puppy']")
+	@FindBy (xpath = "//input[@value='Adopt Another Puppy']", timeoutInSeconds="1")
 	WebElement adoptAnotherPuppyButton;
 
-	@FindBy (xpath = "//input[@value='Change your mind']")
+	@FindBy (xpath = "//input[@value='Change your mind']", timeoutInSeconds="1")
 	WebElement changeYourMindButton;
 
 	public void adoptAnotherPuppy() {
