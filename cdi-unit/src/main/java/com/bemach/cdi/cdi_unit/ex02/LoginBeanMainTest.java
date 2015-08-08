@@ -1,4 +1,4 @@
-package com.bemach.cdi.cdi_unit;
+package com.bemach.cdi.cdi_unit.ex02;
 
 import java.util.Set;
 

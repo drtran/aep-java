@@ -1,4 +1,4 @@
-package com.bemach.cdi.cdi_unit;
+package com.bemach.cdi.cdi_unit.ex02;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -9,6 +9,8 @@ import org.jglue.cdiunit.CdiRunner;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.bemach.cdi.cdi_unit.ex02.LoginBean;
 
 @RunWith(CdiRunner.class)
 @ActivatedAlternatives(FakeAuthenticateServiceImpl.class)
@@ -28,6 +30,6 @@ public class LoginBeanTest {
 	@Test
 	public void shouldCreateInstance() {
 		
-		assertNotNull("", loginBean);
+		assertNotNull("Failed to create object.", loginBean);
 	}
 }
