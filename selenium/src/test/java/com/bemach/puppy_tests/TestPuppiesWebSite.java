@@ -6,15 +6,23 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+/**
+ * Upgraded to 2.47.1 Selenium.*
+ * Use Firefox instead of Chrome.
+ * 
+ * @author ktran
+ *
+ */
 public class TestPuppiesWebSite {
 	public static void main(String[] args){
 		// change to point where you store chromedrive.exe.
-		System.setProperty("webdriver.chrome.driver", "C:/csdwin/bin/browser-drivers/chromedriver.exe");
+		//		System.setProperty("webdriver.chrome.driver", "C:/csdwin/bin/browser-drivers/chromedriver.exe");
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
+		
 		driver.get("http://localhost:3000");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
