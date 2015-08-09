@@ -2,6 +2,8 @@ package com.bemach.bdd.serenity_cukes.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 
 import com.bemach.bdd.serenity_cukes.steps.PaymentInfo;

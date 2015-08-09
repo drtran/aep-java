@@ -1,8 +1,12 @@
 *.pydevproject
 .metadata
 .gradle
+.classpath
+.recommenders/
+*~
 bin/
 tmp/
+target/
 *.tmp
 *.bak
 *.swp
