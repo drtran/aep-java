@@ -3,7 +3,7 @@ package com.bemach.security.samples;
 import java.io.File;
 import java.net.URL;
 
-public class SpringConfigEncrypter extends KeyStoreEncrypter {
+public class SpringConfigEncrypter extends KeyStoreEncrypterImpl {
 	private String keyStoreDir="";
 	
 	public SpringConfigEncrypter() {
