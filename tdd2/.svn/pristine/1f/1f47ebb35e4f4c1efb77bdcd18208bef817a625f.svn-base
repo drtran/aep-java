@@ -1,7 +1,0 @@
-package com.bemach.tdd;
-
-public class BankAccount {
-
-	public int balanace;
-
-}
