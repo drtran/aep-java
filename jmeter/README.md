@@ -61,6 +61,11 @@ Download the community edition (~ 800MB).
 
 - Create a workbench to record activities from this website: [http://newtours.demoaut.com/](http://newtours.demoaut.com/). uid/psw = test/test.
 
+## Selenium Runs:
+
+- When I export a JAR that contains unit tests with Selenium, I have to make sure to include
+the seleium-api.jar and selenium-firefox-driver.jar (2.47.1) along with the app jar in <jmeter>/lib/junit folder. Make sure all supporting JARs are included here otherwise, Jmeter JUNIT won't show your test classes.
+
 
 
 

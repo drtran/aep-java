@@ -1,20 +1,32 @@
-package tutorial;
+package com.bemach.tdd;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class NavToAUrl {
+/**
+ * Upgraded to 2.47.1 Selenium.*
+ * Use Firefox instead of Chrome.
+ * 
+ * @author ktran
+ *
+ */
+public class TestPuppiesWebSite {
 	public static void main(String[] args){
-		WebDriver driver = new ChromeDriver();
-		driver.get("http://puppies.herokuapp.com");
+		// change to point where you store chromedrive.exe.
+		//		System.setProperty("webdriver.chrome.driver", "C:/csdwin/bin/browser-drivers/chromedriver.exe");
+
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.get("http://localhost:3000");
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		System.out.println("Getting web elements ..");
-		// List<WebElement> allWebEs = driver.findElements(By.className("name"));
 		List<WebElement> names = driver.findElements(By.xpath("//div[@class='name']"));
 		List<WebElement> values = driver.findElements(By.xpath("//input[@value='View Details']"));
 		
