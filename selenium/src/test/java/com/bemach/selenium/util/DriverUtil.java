@@ -1,4 +1,4 @@
-package com.bemach.selenium.tests;
+package com.bemach.selenium.util;
 
 import java.net.MalformedURLException;
 import java.net.URL;

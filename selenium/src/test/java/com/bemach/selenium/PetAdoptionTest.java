@@ -1,33 +1,90 @@
-package com.bemach.puppy_tests;
+package com.bemach.selenium;
+
+import static org.junit.Assert.assertEquals;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class PuppiesTest {
+public class PetAdoptionTest {
+	private static final String ONLINE_PUPPIES_ADOPTION_SITE = "http://puppies.herokuapp.com";
+	private static final String LOCAL_PUPPIES_ADOPTION_SITE = "http://localhost:3000";
+	private static final String PHANTOMJS_DRIVER_URL = "http://localhost:8910";
+	private static final String REMOTE_DRIVER_URL = "http://localhost:4444/wd/hub";
 	private WebDriver driver;
 	
+	@Before
+	public void setUp() {
+		
+	}
+	
+	@After 
+	public void tearDown() {
+		driver.close();
+	}
+	
 	@Test
-	public void shouldAdoptPet() throws MalformedURLException {
-		URL serverUrl = new URL("http://localhost:8910");
+	public void shouldAdoptWithGhostDriver() throws MalformedURLException {
+		getGhostDriver();
+		adopt_a_pet();
+	}
+
+	@Test
+	public void shouldAdoptWithFirefoxDriver() {
+		driver = new FirefoxDriver();
+		adopt_a_pet();
+	}
+	
+	@Test
+	public void shouldAdoptWithChromeDriver() {
+		driver = new ChromeDriver();
+		adopt_a_pet();
+	}
+		
+	@Test
+	public void shouldAdoptWithRemoteChromeDriver() throws MalformedURLException {
+		// See instruction on how to start a Selenium Standalone Server ...
+		getRemoteDriver(DesiredCapabilities.chrome());
+		adopt_a_pet();
+	}
+	
+	@Test
+	public void shouldAdoptWithRemoteFirefoxDriver() throws MalformedURLException {
+		// See instruction on how to start a Selenium Standalone Server ...
+		getRemoteDriver(DesiredCapabilities.firefox());
+		adopt_a_pet();
+	}
+	
+	private void getRemoteDriver(DesiredCapabilities browserType) throws MalformedURLException {
+		URL serverUrl = new URL(REMOTE_DRIVER_URL);
+		driver = new RemoteWebDriver(serverUrl, browserType);
+	}
+	
+	private void getGhostDriver() throws MalformedURLException {
+		// See instruction on how to start a PhantomJS Remote Driver ...
+		URL serverUrl = new URL(PHANTOMJS_DRIVER_URL);
 		DesiredCapabilities browserType = DesiredCapabilities.phantomjs();
 		driver = new RemoteWebDriver(serverUrl, browserType);
-		
+	}
+
+	private void adopt_a_pet() {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		driver.get("http://localhost:3000");
+		driver.get(ONLINE_PUPPIES_ADOPTION_SITE);
 		
-		System.out.println("Getting web elements ..");
 		List<WebElement> names = driver.findElements(By.xpath("//div[@class='name']"));
 		List<WebElement> values = driver.findElements(By.xpath("//input[@value='View Details']"));
 		
@@ -69,12 +126,6 @@ public class PuppiesTest {
 		commit.click();
 		
 		WebElement thankYouNote = driver.findElement(By.xpath("//p[@id='notice']"));
-		if ("Thank you for adopting a puppy!".equals(thankYouNote.getText())) {
-			System.out.println("Test was a SUCCESS!");
-		} else {
-			System.out.println("Test was a FAILURE!");
-		}
-			
-		driver.close();
+		assertEquals ("", "Thank you for adopting a puppy!", thankYouNote.getText());
 	}
 }
