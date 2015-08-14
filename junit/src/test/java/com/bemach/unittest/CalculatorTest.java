@@ -48,6 +48,12 @@ public class CalculatorTest {
 		assertEquals(expected, result);
 	}
 
+	@Test(expected=ArithmeticException.class)
+	public void DivideByZero() {
+		Calculator calculator = new Calculator();
+		calculator.divide(100, 0);
+	}
+	
 	@After
 	public void tearDown() {
 		
