@@ -25,3 +25,7 @@ an adoption of one pet. Download Selenium Server [here](http://www.seleniumhq.or
 		
 - _PetAdoptionTest2.java_: This class contains the same tests as _PuppyAdoptionTest1_ but broken down into smaller steps. Also, PageObject concept is also employed. The code can be refactored for better organization. That is done in _PuppyAdoptionTest3.java_.
 
+- _PetAdoptionTest3.java_: This class contains refactored code to introduce paymentInfo object. The test code is also refactored to extract common steps for reuse.
+
+- _PetAdoptionTest4.java_: This class contains negative path test code. I am looking into testing the error messages mainly from the payment page.
+

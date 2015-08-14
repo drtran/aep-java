@@ -1,8 +1,10 @@
 package com.bemach.selenium.pages.puppies;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -10,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.bemach.selenium.PaymentInfo;
 
-public class PaymentPage3 {
+public class PaymentPage4 {
 	@FindBy (how = How.XPATH, using = "//*[@id='content']/div[2]/fieldset/legend")
 	private WebElement paymentPageLabelElmt;
 	
@@ -28,6 +30,21 @@ public class PaymentPage3 {
 	
 	@FindBy (how = How.XPATH, using = "//input[@name='commit']")
 	private WebElement placeOrderButtonElmt;
+	
+	@FindBy (how = How.XPATH, using = "//*[@id='error_explanation']/ul/li")
+	private List<WebElement> errorMessageElmts;
+	
+	@FindBy (how = How.XPATH, using = "//*[@id='error_explanation']/h2")
+	private WebElement errorMessagesTitleElmt;
+	
+	@FindBy (how = How.CLASS_NAME, using = "field_with_errors")
+	private List<WebElement> fieldWithErrorElmts;
+
+	private WebDriver driver;
+	
+	public PaymentPage4 (WebDriver driver) {
+		this.driver = driver;
+	}
 	
 	public Object getPageLabel() {
 		return paymentPageLabelElmt.getText();
@@ -48,4 +65,25 @@ public class PaymentPage3 {
 		
 		placeOrderButtonElmt.click();
 	}
+
+	public List<String> getErrorMessages() {
+		List<String> errorMessages = new ArrayList<String>();
+		for (WebElement errorMessageElmt: errorMessageElmts) {
+			errorMessages.add(errorMessageElmt.getText());
+		}
+		return errorMessages;
+	}
+
+	public String getErrorMessagesTitle() {
+		return errorMessagesTitleElmt.getText();
+	}
+
+	public List<String> getErrorFields() {
+		List<String> errorFields = new ArrayList<String>();
+		for (WebElement fieldWithErrorElmt: fieldWithErrorElmts) {
+			errorFields.add(fieldWithErrorElmt.getText());
+		}
+		return errorFields;
+	}
+
 }
