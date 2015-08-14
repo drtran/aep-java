@@ -21,7 +21,9 @@ import com.bemach.selenium.pages.puppies.PaymentPage;
 import com.bemach.selenium.pages.puppies.ViewDetailsPage;
 
 public class PetAdoptionTest2 {
-	private static final String HOMEPAGE_URL = "http://localhost:3000";
+	private static final String ONLINE_PUPPIES_ADOPTION_SITE = "http://puppies.herokuapp.com";
+	private static final String LOCAL_PUPPIES_ADOPTION_SITE = "http://localhost:3000";
+
 	private static WebDriver driver;
 	private HomePage homePage;
 	private ViewDetailsPage viewDetailsPage;
@@ -85,7 +87,7 @@ public class PetAdoptionTest2 {
 	@Before
 	public void setUp() {
 		homePage = PageFactory.initElements(driver, HomePage.class);
-		homePage.visit(HOMEPAGE_URL);
+		homePage.visit(LOCAL_PUPPIES_ADOPTION_SITE);
 	}
 	
 	@After 

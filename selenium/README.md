@@ -7,10 +7,21 @@ This Java project contains various sample code using Selenium webdriver.
 For a W3C specification on webdriver, check this [link](https://w3c.github.io/webdriver/webdriver-spec.html "W3C WebDriver").
 
 ## Straight Selenium code
-- _TestPuppiesWebSite.java_: This contains Java code using selenium webdrive to test a website. It uses firefox driver. It is a form of java application with static main method.
 
-- _PuppiesTest.java_: this also contains a JUnit test method similar to that of the TestPuppiesWebSite. It uses remote webdriver instead. In this case it is hard coded to use
-PhantomJS GhostDriver (run phantomjs --webdriver=8910). You would need a download of phantomJS
-software package [here](http://phantomjs.org/ "PhantomJS").
+- _PetAdoptionTest1.java_: Testing adopting one pet with one payment type. The test is exercised
+using the following brwoser drivers:
 
-- If you want to test with a different browsers using remote webdrivers such as firefox or chrome, you would need to run selenium server that you can download [here](http://www.seleniumhq.org/download/ "Selenium Server"). The code is very much the same with an URL to the selenium server like this: http://127.0.0.1:4444/wd/hub. Assuming you run selenium server with a default port 4444.
+		+ Chrome
+		+ Firefox 
+		+ Remote Chrome with Selenium Server
+		+ Remote Firefox with Selenium Server
+		+ Remote Headless browser (Ghost Driver) with PhamtomJS Ghost Driver.
+		
+The code is straight forward one string of activities contains all necessary steps to complete
+an adoption of one pet. Download Selenium Server [here](http://www.seleniumhq.org/download/ "Selenium Server") and PhantomJS Ghost Driver [here](http://phantomjs.org/ "PhantomJS"). To run these standalone servers, use these commands:
+
+		java -jar selenium-server-standalone-?.?.?.jar (?: version you download.
+		phantomjs --webdriver=???? (????: port number. i.e., 8910)
+		
+- _PetAdoptionTest2.java_: This class contains the same tests as _PuppyAdoptionTest1_ but broken down into smaller steps. Also, PageObject concept is also employed. The code can be refactored for better organization. That is done in _PuppyAdoptionTest3.java_.
+
