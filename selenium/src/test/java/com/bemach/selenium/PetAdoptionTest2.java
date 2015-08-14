@@ -17,7 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.bemach.selenium.pages.puppies.AdoptingPetsPage;
 import com.bemach.selenium.pages.puppies.HomePage;
-import com.bemach.selenium.pages.puppies.PaymentPage;
+import com.bemach.selenium.pages.puppies.PaymentPage2;
 import com.bemach.selenium.pages.puppies.ViewDetailsPage;
 
 public class PetAdoptionTest2 {
@@ -28,7 +28,7 @@ public class PetAdoptionTest2 {
 	private HomePage homePage;
 	private ViewDetailsPage viewDetailsPage;
 	private AdoptingPetsPage adoptingPetsPage;
-	private PaymentPage paymentPage;
+	private PaymentPage2 paymentPage;
 	
 	@Test
 	public void shouldSelectPetByName() {
@@ -54,7 +54,7 @@ public class PetAdoptionTest2 {
 		viewDetailsPage.adopt_the_pet();
 		adoptingPetsPage = PageFactory.initElements(driver, AdoptingPetsPage.class);
 		adoptingPetsPage.complete_the_adoption();
-		paymentPage = PageFactory.initElements(driver, PaymentPage.class);
+		paymentPage = PageFactory.initElements(driver, PaymentPage2.class);
 		assertEquals("Please Enter Your Details", paymentPage.getPageLabel());
 	}
 	
@@ -65,7 +65,7 @@ public class PetAdoptionTest2 {
 		viewDetailsPage.adopt_the_pet();
 		adoptingPetsPage = PageFactory.initElements(driver, AdoptingPetsPage.class);
 		adoptingPetsPage.complete_the_adoption();
-		paymentPage = PageFactory.initElements(driver, PaymentPage.class);
+		paymentPage = PageFactory.initElements(driver, PaymentPage2.class);
 		PaymentInfo paymentInfo = new PaymentInfo();
 		paymentPage.pay(paymentInfo);
 		assertEquals("Thank you for adopting a puppy!", homePage.getNotice());

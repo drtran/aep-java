@@ -2,7 +2,6 @@ package com.bemach.selenium.pages.puppies;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -10,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.bemach.selenium.PaymentInfo;
 
-public class PaymentPage {
+public class PaymentPage2 {
 	@FindBy (how = How.XPATH, using = "//*[@id='content']/div[2]/fieldset/legend")
 	private WebElement paymentPageLabelElmt;
 	
@@ -34,13 +33,13 @@ public class PaymentPage {
 	}
 
 	public void pay(PaymentInfo paymentInfo) {
-		orderNameElmt.sendKeys(paymentInfo.getName());
-		orderAddressElmt.sendKeys(paymentInfo.getAddress());
-		orderEmailElmt.sendKeys(paymentInfo.getEmail());
+		orderNameElmt.sendKeys("William Shakespeare");
+		orderAddressElmt.sendKeys("Stratford-upon-Avon, England");
+		orderEmailElmt.sendKeys("william_shakespeare@england.com");
 		Select select = new Select(payTypeElmt);
 		List<WebElement> options = select.getOptions();
 		for (WebElement option: options) {
-			if (option.getText().equals(paymentInfo.getPayType())) {
+			if (option.getText().equals("Check")) {
 				option.click();
 				break;
 			}

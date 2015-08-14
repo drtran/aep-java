@@ -17,7 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.bemach.selenium.pages.puppies.AdoptingPetsPage;
 import com.bemach.selenium.pages.puppies.HomePage;
-import com.bemach.selenium.pages.puppies.PaymentPage;
+import com.bemach.selenium.pages.puppies.PaymentPage3;
 import com.bemach.selenium.pages.puppies.ViewDetailsPage;
 
 public class PetAdoptionTest3 {
@@ -28,7 +28,7 @@ public class PetAdoptionTest3 {
 	private HomePage homePage;
 	private ViewDetailsPage viewDetailsPage;
 	private AdoptingPetsPage adoptingPetsPage;
-	private PaymentPage paymentPage;
+	private PaymentPage3 paymentPage;
 	
 	@Test
 	public void shouldSelectPetByName() {
@@ -53,7 +53,7 @@ public class PetAdoptionTest3 {
 	public void shouldPlaceOrderForOnePet() {
 		PaymentInfo paymentInfo = new PaymentInfo(
 				"William Shakespeare", "Stratford-upon-Avon, England", 
-				"william_shakespeare@england.com", "Check");
+				"william_shakespeare@england.com", "Credit card");
 		pay_for_one_pet(paymentInfo);
 		assertEquals("Thank you for adopting a puppy!", homePage.getNotice());
 	}
@@ -73,7 +73,7 @@ public class PetAdoptionTest3 {
 	private void complete_the_adoption(String petName) {
 		adopt_a_pet(petName);
 		adoptingPetsPage.complete_the_adoption();
-		paymentPage = PageFactory.initElements(driver, PaymentPage.class);
+		paymentPage = PageFactory.initElements(driver, PaymentPage3.class);
 	}
 	
 	private void pay_for_one_pet(PaymentInfo paymentInfo) {
