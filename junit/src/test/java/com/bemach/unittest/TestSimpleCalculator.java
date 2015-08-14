@@ -11,14 +11,17 @@ public class TestSimpleCalculator {
 	private SimpleCalculator simpleCalculator;
 
 	@BeforeClass
+	public static void setUpClass() {
+	
+	}
 	
 	@Before
-	public void SetUp() {
+	public void setUp() {
 		simpleCalculator = new SimpleCalculator();
 	}
 	
 	@Test
-	public void AddTwoValues() {
+	public void addTwoValues() {
 		simpleCalculator = new SimpleCalculator();
 		int result = simpleCalculator.add(100, 101);
 		assertEquals(201, result);
@@ -31,7 +34,7 @@ public class TestSimpleCalculator {
 	}
 	
 	@After
-	public void TearDown() {
-		// May be used for say closing a connection to db or similar thing.
+	public void tearDown() {
+		
 	}
 }

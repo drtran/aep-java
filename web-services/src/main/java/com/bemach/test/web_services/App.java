@@ -1,4 +1,4 @@
-package com.bemach.unittest;
+package com.bemach.test.web_services;
 
 /**
  * Hello world!

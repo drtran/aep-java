@@ -6,7 +6,7 @@
  * Use as is - No warranties whatsoever.
  * 
  */
-package com.bemach.unittest;
+package com.bemach.test.web_services;
 import static com.jayway.restassured.RestAssured.get;
 import org.json.JSONArray;
 import org.json.JSONException;
