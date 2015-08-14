@@ -16,7 +16,10 @@ public class HomePage {
 	
 	@FindBy (how = How.XPATH, using = "//input[@value='View Details']")
 	private List<WebElement> viewDetailsElmts;
-	
+
+	@FindBy (how = How.XPATH, using = "//p[@id='notice']")
+	private WebElement noticeElmt;
+
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -30,5 +33,13 @@ public class HomePage {
 			}
 			index++;
 		}
+	}
+
+	public void visit(String homePageUrl) {
+		driver.get(homePageUrl);
+	}
+
+	public Object getNotice() {
+		return noticeElmt.getText();
 	}
 }

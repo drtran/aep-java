@@ -19,7 +19,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class PetAdoptionTest {
+public class PetAdoptionTest1 {
 	private static final String ONLINE_PUPPIES_ADOPTION_SITE = "http://puppies.herokuapp.com";
 	private static final String LOCAL_PUPPIES_ADOPTION_SITE = "http://localhost:3000";
 	private static final String PHANTOMJS_DRIVER_URL = "http://localhost:8910";
