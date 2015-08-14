@@ -34,13 +34,13 @@ public class PaymentPage {
 	}
 
 	public void pay(PaymentInfo paymentInfo) {
-		orderNameElmt.sendKeys("Cheezy");
-		orderAddressElmt.sendKeys("123 Main Street");
-		orderEmailElmt.sendKeys("cheezy@example.com");
+		orderNameElmt.sendKeys(paymentInfo.getName());
+		orderAddressElmt.sendKeys(paymentInfo.getAddress());
+		orderEmailElmt.sendKeys(paymentInfo.getEmail());
 		Select select = new Select(payTypeElmt);
 		List<WebElement> options = select.getOptions();
 		for (WebElement option: options) {
-			if (option.getText().equals("Check")) {
+			if (option.getText().equals(paymentInfo.getPayType())) {
 				option.click();
 				break;
 			}

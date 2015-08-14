@@ -51,7 +51,9 @@ public class PetAdoptionTest3 {
 	
 	@Test 
 	public void shouldPlaceOrderForOnePet() {
-		PaymentInfo paymentInfo = new PaymentInfo();
+		PaymentInfo paymentInfo = new PaymentInfo(
+				"William Shakespeare", "Stratford-upon-Avon, England", 
+				"william_shakespeare@england.com", "Check");
 		pay_for_one_pet(paymentInfo);
 		assertEquals("Thank you for adopting a puppy!", homePage.getNotice());
 	}
