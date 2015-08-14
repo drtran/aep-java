@@ -82,6 +82,7 @@ public class PetAdoptionTest2 {
 	@AfterClass
 	public static void tearDownGlobal() {
 		driver.close();
+		driver.quit();
 	}
 	
 	@Before
