@@ -6,16 +6,14 @@ import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
-public class BddMocking {
+public class Flower1Test {
 	public static final int TEST_NUMBER_OF_LEAFS = 5;
+	
 	@Test
 	public void shouldReturnGivenValueUsingBDDSemantics() {
-		// given
-		Flower flowerMock = mock(Flower.class);
+		Flower1 flowerMock = mock(Flower1.class);
 		given(flowerMock.getNumberOfLeafs()).willReturn(TEST_NUMBER_OF_LEAFS);
-		// when
 		int numberOfLeafs = flowerMock.getNumberOfLeafs();
-		// then
 		assertEquals(numberOfLeafs, TEST_NUMBER_OF_LEAFS);
 	}
 }

@@ -11,7 +11,7 @@ public class SimpleStubbingTest {
 
 	@Test
 	public void shouldReturnGivenValue() {
-		Flower flowerMock = mock(Flower.class);
+		Flower1 flowerMock = mock(Flower1.class);
 		when(flowerMock.getNumberOfLeafs()).thenReturn(TEST_NUMBER_OF_LEAFS);
 		int numberOfLeafs = flowerMock.getNumberOfLeafs();
 		assertEquals(numberOfLeafs, TEST_NUMBER_OF_LEAFS);
