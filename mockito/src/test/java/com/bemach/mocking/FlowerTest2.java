@@ -6,6 +6,12 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
+/**
+ * Regular Mocking with When & Then Return.
+ * 
+ * @author ktran
+ *
+ */
 public class FlowerTest2 {
 	public static final int TEST_NUMBER_OF_LEAFS = 5;
 

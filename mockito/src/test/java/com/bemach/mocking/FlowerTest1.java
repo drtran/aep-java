@@ -6,6 +6,16 @@ import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
+/**
+ * BDD with JUnit Tests
+ * 
+ * Given
+ * When 
+ * Then
+ * 
+ * @author ktran
+ *
+ */
 public class FlowerTest1 {
 	public static final int TEST_NUMBER_OF_LEAFS = 5;
 	

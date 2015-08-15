@@ -13,19 +13,19 @@ import java.util.List;
 
 import com.bemach.mocking.contracts.KeystoreManager;
 
-public class KeystoreMgrImpl implements KeystoreManager {
+public class KeystoreManagerImpl implements KeystoreManager {
 
 	private String keystoreFile;
 	private String password;
+	private KeyStore keystore;
 
-	public KeystoreMgrImpl(String keystoreFile, String password) {
+	public KeystoreManagerImpl (String keystoreFile, String password) throws KeyStoreException {
 		this.keystoreFile = keystoreFile;
 		this.password = password;
+		keystore = KeyStore.getInstance(KeyStore.getDefaultType());
 	}
 
-	@Override
-	public List<String> keyAliases() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException {
-		KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
+	public List<String> keyAliases() throws NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException, KeyStoreException {
 		keystore.load(new FileInputStream(new File(keystoreFile)), password.toCharArray());
 		return Collections.list(keystore.aliases());
 	}
