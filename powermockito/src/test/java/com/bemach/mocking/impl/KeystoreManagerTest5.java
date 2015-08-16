@@ -33,14 +33,14 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import com.bemach.mocking.contracts.KeystoreManager;
 
 /**
- * Mocking -- Using PowerMockito - Use different style of naming test names.
+ * Mocking -- Using PowerMockito - Rearrange import for readability
  * 
  * @author ktran
  *
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(value={KeyStore.class, File.class, KeystoreManagerImpl.class})
-public class KeystoreManagerTest4 {
+public class KeystoreManagerTest5 {
 	private KeystoreManager target = null;
 	
 	@Mock
@@ -79,12 +79,12 @@ public class KeystoreManagerTest4 {
 	}
 	
 	@Test
-	public void should_create_instance() {
+	public void shouldCreateInstance() {
 		assertNotNull(target);
 	}
 	
 	@Test
-	public void should_get_list_of_key_aliases() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
+	public void shouldGetListOfKeyAliases() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
 		List<String> keyAliases = target.keyAliases();
 		
 		verify(mockKeystore).load(Matchers.any(FileInputStream.class), Matchers.any(char[].class));
@@ -93,7 +93,7 @@ public class KeystoreManagerTest4 {
 	}
 	
 	@Test
-	public void should_have_one_alias_in_list() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException {
+	public void shouldHaveOneAliasInList() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException {
 		List<String> actualAliases = target.keyAliases();
 		
 		verify(mockKeystore).load(Matchers.any(FileInputStream.class), Matchers.any(char[].class));
@@ -102,7 +102,7 @@ public class KeystoreManagerTest4 {
 	}
 	
 	@Test
-	public void should_have_several_aliases_in_list() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException {
+	public void shouldHaveSeveralAliasesInList() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException {
 		List<String> actualAliases = target.keyAliases();
 		String[] expectedAliases = {"thawtepersonalfreemailca", "wlsdemobcca1024", "wlscertgenca"};
 		
