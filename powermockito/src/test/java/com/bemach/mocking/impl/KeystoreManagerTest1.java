@@ -25,35 +25,35 @@ import com.bemach.mocking.contracts.KeystoreManager;
  *
  */
 public class KeystoreManagerTest1 {
-	private KeystoreManager keystoreMgr;
+	private KeystoreManager target = null;
 	private String keystoreFile = getClass().getResource("/cacerts").getFile();;
 	private String password = "changeit";
 
 	@Before
 	public void setUp() throws KeyStoreException {
-		keystoreMgr = new KeystoreManagerImpl(keystoreFile, password);
+		target = new KeystoreManagerImpl(keystoreFile, password);
 	}
 	
 	@Test
 	public void shouldCreateInstance() {
-		assertNotNull(keystoreMgr);
+		assertNotNull(target);
 	}
 	
 	@Test
 	public void shouldGetListOfKeyAliases() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
-		List<String> keyAliases = keystoreMgr.keyAliases();
+		List<String> keyAliases = target.keyAliases();
 		Assert.assertThat(keyAliases, CoreMatchers.is(not(empty())));
 	}
 	
 	@Test
 	public void shouldHaveOneAliasInList() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException {
-		List<String> actualAliases = keystoreMgr.keyAliases();
+		List<String> actualAliases = target.keyAliases();
 		Assert.assertThat(actualAliases, CoreMatchers.hasItem("verisignserverca"));
 	}
 	
 	@Test
 	public void shouldHaveSeveralAliasesInList() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, FileNotFoundException, IOException {
-		List<String> actualAliases = keystoreMgr.keyAliases();
+		List<String> actualAliases = target.keyAliases();
 		String[] expectedAliases = {"thawtepersonalfreemailca", "wlsdemobcca1024", "wlscertgenca"};
 		Assert.assertThat(actualAliases, CoreMatchers.hasItems(expectedAliases));
 	}
