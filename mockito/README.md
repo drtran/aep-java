@@ -35,7 +35,7 @@ The tests are identical of that the KeystoreManagerImplTest1 class but fakes dat
 		PowerMockito.whenNew(File.class).withArguments(keystoreFile).thenReturn(mockFile);
 		PowerMockito.whenNew(FileInputStream.class).withArguments(mockFile).thenReturn(mockFileInputStream);
 
-	
+- _KeystoreManagerImplTest4.java_: Rearrange import for readability.	
 
 ## Additional information:
 

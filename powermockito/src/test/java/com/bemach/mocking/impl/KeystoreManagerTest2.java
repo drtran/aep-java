@@ -31,7 +31,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import com.bemach.mocking.contracts.KeystoreManager;
 
 /**
- * Mocking -- Straight JUnit tests.
+ * Mocking -- using PowerMockito
  * 
  * @author ktran
  *
