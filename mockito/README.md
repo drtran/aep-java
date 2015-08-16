@@ -21,14 +21,28 @@ When use PowerMockito, I includes all class that are involved in the @PrepareFor
 
 The tests are identical of that the KeystoreManagerImplTest1 class but fakes data is being used instead.
 
+- _KeystoreManagerImplTest3.java_: Introducing mocking File and FileInputStream using whenNew method.
 
+		@RunWith(PowerMockRunner.class)
+		@PrepareForTest(value={KeyStore.class, File.class, KeystoreManagerImpl.class})
+
+		@Mock
+		private File mockFile;
+		
+		@Mock
+		private FileInputStream mockFileInputStream;
+	
+		PowerMockito.whenNew(File.class).withArguments(keystoreFile).thenReturn(mockFile);
+		PowerMockito.whenNew(FileInputStream.class).withArguments(mockFile).thenReturn(mockFileInputStream);
+
+	
 
 ## Additional information:
 
-From Oracle WebLogic shipment. We use this for testing only.
+From Oracle WebLogic install. We use this for testing only.
 
-Keystore: cacerts
-Password: changeit
-
-Keystore: DemoTrust.jks
-Password: DemoTrustKeyStorePassPhrase
+		Keystore: cacerts
+		Password: changeit
+		
+		Keystore: DemoTrust.jks
+		Password: DemoTrustKeyStorePassPhrase
