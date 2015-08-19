@@ -1,4 +1,4 @@
-package com.bemach.cdi.cdi_unit.ex02;
+package com.bemach.cdi.cdi_unit.ex00;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.bemach.cdi.cdi_unit.ex02.LoginBean;
+import com.bemach.cdi.cdi_unit.ex00.LoginBean;
 
 @RunWith(CdiRunner.class)
 @ActivatedAlternatives(FakeAuthenticateServiceImpl.class)

@@ -1,4 +1,4 @@
-package com.bemach.cdi.cdi_unit.ex02;
+package com.bemach.cdi.cdi_unit.ex00;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;

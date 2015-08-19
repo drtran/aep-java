@@ -16,10 +16,22 @@ package com.bemach.cdi.unit.ex01;
  */
 public interface AuthenticateService<String> {
 	/**
-	 * A successful login returns a
+	 * A successful login returns an userinfo object
 	 * @param userId
 	 * @param psw
 	 * @return
 	 */
-	public UserInfoImpl authenticate(String userId, String psw);
+	public UserInfo login(String userId, String psw);
+	
+	/**
+	 * Checks to see of a user is logged in.
+	 * 
+	 * @return
+	 */
+	public boolean isLogin();
+	
+	/**
+	 * Logout a user,
+	 */
+	public void logout();
 }

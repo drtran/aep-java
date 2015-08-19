@@ -1,4 +1,4 @@
-package com.bemach.test.dbunit;
+package com.bemach.java.cdi;
 
 /**
  * Hello world!
