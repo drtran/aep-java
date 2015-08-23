@@ -3,12 +3,12 @@ package com.bemach.cdi.cdi_unit.ex00;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-public class LoginBean {
+public class Login {
 	
 	@Inject
 	private AuthenticateService authenticateSvc;
 
-	public LoginBean() {
+	public Login() {
 		
 	}
 	

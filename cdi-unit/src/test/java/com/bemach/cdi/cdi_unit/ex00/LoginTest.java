@@ -10,13 +10,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.bemach.cdi.cdi_unit.ex00.LoginBean;
+import com.bemach.cdi.cdi_unit.ex00.Login;
 
 @RunWith(CdiRunner.class)
 @ActivatedAlternatives(FakeAuthenticateServiceImpl.class)
-public class LoginBeanTest {
+public class LoginTest {
 	@Inject
-	private LoginBean loginBean;
+	private Login target;
 	
 //	@Produces  
 //	@Mock
@@ -30,6 +30,6 @@ public class LoginBeanTest {
 	@Test
 	public void shouldCreateInstance() {
 		
-		assertNotNull("Failed to create object.", loginBean);
+		assertNotNull("Failed to create object.", target);
 	}
 }

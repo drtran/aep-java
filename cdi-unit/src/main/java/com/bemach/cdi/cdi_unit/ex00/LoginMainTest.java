@@ -8,9 +8,9 @@ import javax.enterprise.inject.spi.BeanManager;
 import org.apache.deltaspike.cdise.api.CdiContainer;
 import org.apache.deltaspike.cdise.api.CdiContainerLoader;
 
-public class LoginBeanMainTest {
+public class LoginMainTest {
 	private CdiContainer cdiContainer;
-    private LoginBean loginBean;
+    private Login loginBean;
 
     // ======================================
     // =          Lifecycle Methods         =
@@ -25,10 +25,10 @@ public class LoginBeanMainTest {
 
         BeanManager beanManager = cdiContainer.getBeanManager();
 
-        Set<Bean<?>> beans = beanManager.getBeans(LoginBean.class);
+        Set<Bean<?>> beans = beanManager.getBeans(Login.class);
         Bean<?> bean = beanManager.resolve(beans);
 
-        loginBean = (LoginBean) beanManager.getReference(bean, LoginBean.class, beanManager.createCreationalContext(bean));
+        loginBean = (Login) beanManager.getReference(bean, Login.class, beanManager.createCreationalContext(bean));
     }
 
     public void closeBeanManager() {
@@ -36,7 +36,7 @@ public class LoginBeanMainTest {
     }
     
     public static void main (String[] args) {
-    	LoginBeanMainTest main = new LoginBeanMainTest();
+    	LoginMainTest main = new LoginMainTest();
     	main.initBeanManager();
     	System.out.println("Testing ....");
     	main.closeBeanManager();

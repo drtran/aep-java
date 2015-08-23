@@ -11,27 +11,37 @@ package com.bemach.cdi.unit.ex01;
 /**
  * 
  * @author ktran
- * @param <String>
  *
  */
-public interface AuthenticateService<String> {
+public interface AuthenticateService {
 	/**
-	 * A successful login returns an userinfo object
+	 * This creates a logged-in user instance.
+	 * 
 	 * @param userId
 	 * @param psw
-	 * @return
+	 * @return NONE
 	 */
-	public UserInfo login(String userId, String psw);
+	public void login(String userId, String psw);
 	
 	/**
-	 * Checks to see of a user is logged in.
+	 * This queries the for an instance of the UserInfo for a currently unexpired logged-in user.
+	 *  
+	 * @param userId
+	 * @return an instance of the UserInfo
+	 */
+	public UserInfo getUserInfo(String userId);
+	
+	/**
+	 * This queries the current status of login of a user.
 	 * 
-	 * @return
+	 * @return an instance of the UserInfo
 	 */
-	public boolean isLogin();
+	public boolean isUserLogin(String userId);
 	
 	/**
-	 * Logout a user,
+	 * This invalidates the login status of a user.
+	 * 
+	 * @return NONE.
 	 */
-	public void logout();
+	public void logout(String userId);
 }
