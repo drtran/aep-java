@@ -2,44 +2,42 @@ package com.bemach.security.samples;
 
 public interface KeyStoreEncrypter {
 
-	String getAliasName();
+	public String getAliasName();
 
-	String getKeyStore();
+	public String getKeyStore();
 
-	void setKeyStore(String keyStore);
+	public void setKeyStore(String keyStore);
 
-	String getPassphrase();
+	public String getPassphrase();
 
-	void setPassphrase(String passphrase);
+	public void setPassphrase(String passphrase);
 
-	String passphrase();
+	public String passphrase();
 
-	void setAliasName(String aliasName);
+	public void setAliasName(String aliasName);
 
-	String getConfigFile();
+	public void setConfigFile(String configFile);
 
-	void setConfigFile(String configFile);
+	public String getSecretFile();
 
-	String getSecretFile();
-
-	void setSecretFile(String secretFile);
+	public void setSecretFile(String secretFile);
 
 	/*
 	 * (non-Javadoc)
 	 *
 	 */
-	String decrypt(byte[] keyValue, String encryptedText64) throws Exception;
+	public String decrypt(byte[] keyValue, String encryptedText64) throws Exception;
 
-	String encrypt(byte[] keyValue, String clearTextStr) throws Exception;
+	public String encrypt(byte[] keyValue, String clearTextStr) throws Exception;
 
-	byte[] getKey(String keyStore, String passphrase, String aliasName) throws Exception;
+	public byte[] getKey(String keyStore, String passphrase, String aliasName) throws Exception;
 
-	String decrypt(String keyStore, String passphrase, String aliasName, String cipherText) throws Exception;
+	public String decrypt(String keyStore, String passphrase, String aliasName, String cipherText) throws Exception;
 
-	String encrypt(String keyStore, String passphrase, String aliasName, String clearText) throws Exception;
+	public String encrypt(String keyStore, String passphrase, String aliasName, String clearText) throws Exception;
 
-	String decrypt(String cipherText) throws Exception;
+	public String decrypt(String cipherText) throws Exception;
 
-	String encrypt(String clearText) throws Exception;
+	public String encrypt(String clearText) throws Exception;
 
 }

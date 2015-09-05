@@ -24,7 +24,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#getAliasName()
 	 */
-	@Override
 	public String getAliasName() {
 		return aliasName;
 	}
@@ -39,7 +38,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#getKeyStore()
 	 */
-	@Override
 	public String getKeyStore() {
 		return keyStore;
 	}
@@ -47,7 +45,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#setKeyStore(java.lang.String)
 	 */
-	@Override
 	public void setKeyStore(String keyStore) {
 		this.keyStore = keyStore;
 	}
@@ -55,7 +52,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#getPassphrase()
 	 */
-	@Override
 	public String getPassphrase() {
 		return passphrase;
 	}
@@ -63,7 +59,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#setPassphrase(java.lang.String)
 	 */
-	@Override
 	public void setPassphrase(String passphrase) {
 		this.passphrase = passphrase;
 	}
@@ -71,7 +66,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#passphrase()
 	 */
-	@Override
 	public String passphrase() {
 		return aliasName;
 	}
@@ -79,7 +73,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#setAliasName(java.lang.String)
 	 */
-	@Override
 	public void setAliasName(String aliasName) {
 		this.aliasName = aliasName;
 	}
@@ -87,7 +80,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#getConfigFile()
 	 */
-	@Override
 	public String getConfigFile() {
 		return configFile;
 	}
@@ -95,7 +87,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#setConfigFile(java.lang.String)
 	 */
-	@Override
 	public void setConfigFile(String configFile) {
 		this.configFile = configFile;
 	}
@@ -103,7 +94,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#getSecretFile()
 	 */
-	@Override
 	public String getSecretFile() {
 		return secretFile;
 	}
@@ -111,7 +101,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#setSecretFile(java.lang.String)
 	 */
-	@Override
 	public void setSecretFile(String secretFile) {
 		this.secretFile = secretFile;
 	}
@@ -147,7 +136,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#decrypt(byte[], java.lang.String)
 	 */
-	@Override
 	public String decrypt(byte[] keyValue, String encryptedText64) throws Exception {
 		try {
 			DESedeKeySpec keySpec = new DESedeKeySpec(keyValue);
@@ -166,7 +154,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#encrypt(byte[], java.lang.String)
 	 */
-	@Override
 	public String encrypt(byte[] keyValue, String clearTextStr) throws Exception {
 		try {
 			DESedeKeySpec keySpec = new DESedeKeySpec(keyValue);
@@ -210,7 +197,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#getKey(java.lang.String, java.lang.String, java.lang.String)
 	 */
-	@Override
 	public byte[] getKey(String keyStore, String passphrase, String aliasName)
 			throws Exception {
 		byte[] encKey = null;
@@ -235,7 +221,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#decrypt(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
 	 */
-	@Override
 	public String decrypt(String keyStore, String passphrase, String aliasName,
 			String cipherText) throws Exception {
 		byte[] encKey = getKey(keyStore, passphrase, aliasName);
@@ -245,7 +230,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#encrypt(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
 	 */
-	@Override
 	public String encrypt(String keyStore, String passphrase, String aliasName,
 			String clearText) throws Exception {
 		byte[] encKey = getKey(keyStore, passphrase, aliasName);
@@ -255,7 +239,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#decrypt(java.lang.String)
 	 */
-	@Override
 	public String decrypt(String cipherText) throws Exception {
 		String passphrase = CredentialsFileUtil.getPassword(getAliasName(),
 				getConfigFile(), getSecretFile());
@@ -266,7 +249,6 @@ public class KeyStoreEncrypterImpl implements Encryption, KeyStoreEncrypter {
 	/* (non-Javadoc)
 	 * @see com.bemach.security.samples.IKeyStoreEncrypter#encrypt(java.lang.String)
 	 */
-	@Override
 	public String encrypt(String clearText) throws Exception {
 		String passphrase = CredentialsFileUtil.getPassword(getAliasName(),
 				getConfigFile(), getSecretFile());
