@@ -3,9 +3,9 @@ Feature: Adopting multiple puppies
   As a pet owner,
   I want to adopt two puppies
   
-  @Wip
-  Scenario: Adopting two puppies from the website.
-    Given that I am at the website "http://localhost:3000"
+ @scenario-1
+  Scenario: Adopting two puppies from the website - version 1.
+    Given that I am at the website "http://puppies.herokuapp.com/"
     When I adopt for these pets, 
       | Brook   |
       | Tipsy   |
@@ -15,9 +15,9 @@ Feature: Adopting multiple puppies
       | Check       | Mr. Baloney | 123 Main Street | baloney@sleezy.com |
     Then I should be back at the main page with a thank you note, "Thank you for adopting a puppy!" 
   
-
-  Scenario Outline: Adopting two puppies from the website using Outline.
-    Given that I am at the website "http://localhost:3000"
+@scenario-2
+  Scenario Outline: Adopting two puppies from the website using Outline - version 2.
+    Given that I am at the website "http://puppies.herokuapp.com/"
 #    When I adopt for these pets, "<pet1>", "<pet2>", and "<pet3>"
     When I adopt for these pets, 
       | <pet1> |
