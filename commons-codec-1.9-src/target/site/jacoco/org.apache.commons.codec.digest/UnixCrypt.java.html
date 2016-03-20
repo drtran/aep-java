@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UnixCrypt.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.html" class="el_package">org.apache.commons.codec.digest</a> &gt; <span class="el_source">UnixCrypt.java</span></div><h1>UnixCrypt.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UnixCrypt.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.source.html" class="el_package">org.apache.commons.codec.digest</a> &gt; <span class="el_source">UnixCrypt.java</span></div><h1>UnixCrypt.java</h1><pre class="source lang-java linenums">/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -50,7 +50,7 @@ import org.apache.commons.codec.Charsets;
             103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122 };
 
 <span class="fc" id="L52">    private static final char SALT_CHARS[] = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./&quot;</span>
-            .toCharArray();
+<span class="fc" id="L53">            .toCharArray();</span>
 
 <span class="fc" id="L55">    private static final boolean SHIFT2[] = { false, false, true, true, true, true, true, true, false, true, true,</span>
             true, true, true, true, false };
@@ -200,7 +200,7 @@ import org.apache.commons.codec.Charsets;
 <span class="fc" id="L200">            final Random randomGenerator = new Random();</span>
 <span class="fc" id="L201">            final int numSaltChars = SALT_CHARS.length;</span>
 <span class="fc" id="L202">            salt = &quot;&quot; + SALT_CHARS[randomGenerator.nextInt(numSaltChars)] +</span>
-                    SALT_CHARS[randomGenerator.nextInt(numSaltChars)];
+<span class="fc" id="L203">                    SALT_CHARS[randomGenerator.nextInt(numSaltChars)];</span>
 <span class="fc bfc" id="L204" title="All 2 branches covered.">        } else if (!salt.matches(&quot;^[&quot; + B64.B64T + &quot;]{2,}$&quot;)) {</span>
 <span class="fc" id="L205">            throw new IllegalArgumentException(&quot;Invalid salt value: &quot; + salt);</span>
         }
@@ -411,4 +411,4 @@ import org.apache.commons.codec.Charsets;
 <span class="fc" id="L411">    }</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.2.201302030002</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

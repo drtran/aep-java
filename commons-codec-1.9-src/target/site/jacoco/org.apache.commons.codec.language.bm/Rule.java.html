@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Rule.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.html" class="el_package">org.apache.commons.codec.language.bm</a> &gt; <span class="el_source">Rule.java</span></div><h1>Rule.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Rule.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.source.html" class="el_package">org.apache.commons.codec.language.bm</a> &gt; <span class="el_source">Rule.java</span></div><h1>Rule.java</h1><pre class="source lang-java linenums">/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -145,7 +145,7 @@ public class Rule {
         @Deprecated
         public Phoneme join(final Phoneme right) {
 <span class="nc" id="L147">            return new Phoneme(this.phonemeText.toString() + right.phonemeText.toString(),</span>
-                               this.languages.restrictTo(right.languages));
+<span class="nc" id="L148">                               this.languages.restrictTo(right.languages));</span>
         }
     }
 
@@ -227,7 +227,7 @@ public class Rule {
 
     private static String createResourceName(final NameType nameType, final RuleType rt, final String lang) {
 <span class="fc" id="L229">        return String.format(&quot;org/apache/commons/codec/language/bm/%s_%s_%s.txt&quot;,</span>
-                             nameType.getName(), rt.getName(), lang);
+<span class="fc" id="L230">                             nameType.getName(), rt.getName(), lang);</span>
     }
 
     private static Scanner createScanner(final NameType nameType, final RuleType rt, final String lang) {
@@ -315,7 +315,7 @@ public class Rule {
     public static Map&lt;String, List&lt;Rule&gt;&gt; getInstanceMap(final NameType nameType, final RuleType rt,
                                                          final Languages.LanguageSet langs) {
 <span class="fc bfc" id="L317" title="All 2 branches covered.">        return langs.isSingleton() ? getInstanceMap(nameType, rt, langs.getAny()) :</span>
-                                     getInstanceMap(nameType, rt, Languages.ANY);
+<span class="fc" id="L318">                                     getInstanceMap(nameType, rt, Languages.ANY);</span>
     }
 
     /**
@@ -336,7 +336,7 @@ public class Rule {
 
 <span class="fc bfc" id="L337" title="All 2 branches covered.">        if (rules == null) {</span>
 <span class="fc" id="L338">            throw new IllegalArgumentException(String.format(&quot;No rules found for %s, %s, %s.&quot;,</span>
-                                               nameType.getName(), rt.getName(), lang));
+<span class="fc" id="L339">                                               nameType.getName(), rt.getName(), lang));</span>
         }
 
 <span class="fc" id="L342">        return rules;</span>
@@ -554,8 +554,8 @@ public class Rule {
 <span class="fc" id="L554">                        return new RPattern() {</span>
                             @Override
                             public boolean isMatch(final CharSequence input) {
-<span class="fc bfc" id="L557" title="All 4 branches covered.">                                return input.length() &gt; 0 &amp;&amp;</span>
-                                       contains(bContent, input.charAt(input.length() - 1)) == shouldMatch;
+<span class="fc bfc" id="L557" title="All 2 branches covered.">                                return input.length() &gt; 0 &amp;&amp;</span>
+<span class="fc bfc" id="L558" title="All 2 branches covered.">                                       contains(bContent, input.charAt(input.length() - 1)) == shouldMatch;</span>
                             }
                         };
                     }
@@ -695,4 +695,4 @@ public class Rule {
 <span class="fc" id="L695">        return this.lContext.isMatch(input.subSequence(0, i));</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.2.201302030002</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

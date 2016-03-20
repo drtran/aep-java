@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Metaphone.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.html" class="el_package">org.apache.commons.codec.language</a> &gt; <span class="el_source">Metaphone.java</span></div><h1>Metaphone.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Metaphone.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.source.html" class="el_package">org.apache.commons.codec.language</a> &gt; <span class="el_source">Metaphone.java</span></div><h1>Metaphone.java</h1><pre class="source lang-java linenums">/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -162,37 +162,37 @@ public class Metaphone implements StringEncoder {
                     }
                     break; // only use vowel if leading char
                 case 'B':
-<span class="pc bpc" id="L165" title="1 of 4 branches missed.">                    if ( isPreviousChar(local, n, 'M') &amp;&amp;</span>
-                         isLastChar(wdsz, n) ) { // B is silent if word ends in MB
+<span class="fc bfc" id="L165" title="All 2 branches covered.">                    if ( isPreviousChar(local, n, 'M') &amp;&amp;</span>
+<span class="pc bpc" id="L166" title="1 of 2 branches missed.">                         isLastChar(wdsz, n) ) { // B is silent if word ends in MB</span>
 <span class="fc" id="L167">                        break;</span>
                     }
 <span class="fc" id="L169">                    code.append(symb);</span>
 <span class="fc" id="L170">                    break;</span>
                 case 'C': // lots of C special cases
                     /* discard if SCI, SCE or SCY */
-<span class="pc bpc" id="L173" title="1 of 6 branches missed.">                    if ( isPreviousChar(local, n, 'S') &amp;&amp;</span>
-                         !isLastChar(wdsz, n) &amp;&amp;
-                         FRONTV.indexOf(local.charAt(n + 1)) &gt;= 0 ) {
+<span class="fc bfc" id="L173" title="All 2 branches covered.">                    if ( isPreviousChar(local, n, 'S') &amp;&amp;</span>
+<span class="pc bpc" id="L174" title="1 of 2 branches missed.">                         !isLastChar(wdsz, n) &amp;&amp;</span>
+<span class="fc bfc" id="L175" title="All 2 branches covered.">                         FRONTV.indexOf(local.charAt(n + 1)) &gt;= 0 ) {</span>
 <span class="fc" id="L176">                        break;</span>
                     }
 <span class="fc bfc" id="L178" title="All 2 branches covered.">                    if (regionMatch(local, n, &quot;CIA&quot;)) { // &quot;CIA&quot; -&gt; X</span>
 <span class="fc" id="L179">                        code.append('X');</span>
 <span class="fc" id="L180">                        break;</span>
                     }
-<span class="pc bpc" id="L182" title="1 of 4 branches missed.">                    if (!isLastChar(wdsz, n) &amp;&amp;</span>
-                        FRONTV.indexOf(local.charAt(n + 1)) &gt;= 0) {
+<span class="pc bpc" id="L182" title="1 of 2 branches missed.">                    if (!isLastChar(wdsz, n) &amp;&amp;</span>
+<span class="fc bfc" id="L183" title="All 2 branches covered.">                        FRONTV.indexOf(local.charAt(n + 1)) &gt;= 0) {</span>
 <span class="fc" id="L184">                        code.append('S');</span>
 <span class="fc" id="L185">                        break; // CI,CE,CY -&gt; S</span>
                     }
-<span class="pc bpc" id="L187" title="1 of 4 branches missed.">                    if (isPreviousChar(local, n, 'S') &amp;&amp;</span>
-                        isNextChar(local, n, 'H') ) { // SCH-&gt;sk
+<span class="fc bfc" id="L187" title="All 2 branches covered.">                    if (isPreviousChar(local, n, 'S') &amp;&amp;</span>
+<span class="pc bpc" id="L188" title="1 of 2 branches missed.">                        isNextChar(local, n, 'H') ) { // SCH-&gt;sk</span>
 <span class="fc" id="L189">                        code.append('K');</span>
 <span class="fc" id="L190">                        break;</span>
                     }
 <span class="fc bfc" id="L192" title="All 2 branches covered.">                    if (isNextChar(local, n, 'H')) { // detect CH</span>
-<span class="pc bpc" id="L193" title="2 of 6 branches missed.">                        if (n == 0 &amp;&amp;</span>
+<span class="pc bpc" id="L193" title="1 of 4 branches missed.">                        if (n == 0 &amp;&amp;</span>
                             wdsz &gt;= 3 &amp;&amp;
-                            isVowel(local,2) ) { // CH consonant -&gt; K consonant
+<span class="pc bpc" id="L195" title="1 of 2 branches missed.">                            isVowel(local,2) ) { // CH consonant -&gt; K consonant</span>
 <span class="fc" id="L196">                            code.append('K');</span>
                         } else {
 <span class="fc" id="L198">                            code.append('X'); // CHvowel -&gt; X</span>
@@ -202,27 +202,27 @@ public class Metaphone implements StringEncoder {
                     }
 <span class="fc" id="L203">                    break;</span>
                 case 'D':
-<span class="pc bpc" id="L205" title="1 of 6 branches missed.">                    if (!isLastChar(wdsz, n + 1) &amp;&amp;</span>
-                        isNextChar(local, n, 'G') &amp;&amp;
-                        FRONTV.indexOf(local.charAt(n + 2)) &gt;= 0) { // DGE DGI DGY -&gt; J
+<span class="fc bfc" id="L205" title="All 2 branches covered.">                    if (!isLastChar(wdsz, n + 1) &amp;&amp;</span>
+<span class="fc bfc" id="L206" title="All 2 branches covered.">                        isNextChar(local, n, 'G') &amp;&amp;</span>
+<span class="pc bpc" id="L207" title="1 of 2 branches missed.">                        FRONTV.indexOf(local.charAt(n + 2)) &gt;= 0) { // DGE DGI DGY -&gt; J</span>
 <span class="fc" id="L208">                        code.append('J'); n += 2;</span>
                     } else {
 <span class="fc" id="L210">                        code.append('T');</span>
                     }
 <span class="fc" id="L212">                    break;</span>
                 case 'G': // GH silent at end or before consonant
-<span class="fc bfc" id="L214" title="All 4 branches covered.">                    if (isLastChar(wdsz, n + 1) &amp;&amp;</span>
-                        isNextChar(local, n, 'H')) {
+<span class="fc bfc" id="L214" title="All 2 branches covered.">                    if (isLastChar(wdsz, n + 1) &amp;&amp;</span>
+<span class="fc bfc" id="L215" title="All 2 branches covered.">                        isNextChar(local, n, 'H')) {</span>
 <span class="fc" id="L216">                        break;</span>
                     }
-<span class="fc bfc" id="L218" title="All 6 branches covered.">                    if (!isLastChar(wdsz, n + 1) &amp;&amp;</span>
-                        isNextChar(local,n,'H') &amp;&amp;
-                        !isVowel(local,n+2)) {
+<span class="fc bfc" id="L218" title="All 2 branches covered.">                    if (!isLastChar(wdsz, n + 1) &amp;&amp;</span>
+<span class="fc bfc" id="L219" title="All 2 branches covered.">                        isNextChar(local,n,'H') &amp;&amp;</span>
+<span class="fc bfc" id="L220" title="All 2 branches covered.">                        !isVowel(local,n+2)) {</span>
 <span class="fc" id="L221">                        break;</span>
                     }
-<span class="pc bpc" id="L223" title="1 of 6 branches missed.">                    if (n &gt; 0 &amp;&amp;</span>
-                        ( regionMatch(local, n, &quot;GN&quot;) ||
-                          regionMatch(local, n, &quot;GNED&quot;) ) ) {
+<span class="fc bfc" id="L223" title="All 2 branches covered.">                    if (n &gt; 0 &amp;&amp;</span>
+<span class="fc bfc" id="L224" title="All 2 branches covered.">                        ( regionMatch(local, n, &quot;GN&quot;) ||</span>
+<span class="pc bpc" id="L225" title="1 of 2 branches missed.">                          regionMatch(local, n, &quot;GNED&quot;) ) ) {</span>
 <span class="nc" id="L226">                        break; // silent G</span>
                     }
 <span class="pc bpc" id="L228" title="1 of 2 branches missed.">                    if (isPreviousChar(local, n, 'G')) {</span>
@@ -231,8 +231,8 @@ public class Metaphone implements StringEncoder {
                     } else {
 <span class="fc" id="L232">                        hard = false;</span>
                     }
-<span class="pc bpc" id="L234" title="2 of 6 branches missed.">                    if (!isLastChar(wdsz, n) &amp;&amp;</span>
-                        FRONTV.indexOf(local.charAt(n + 1)) &gt;= 0 &amp;&amp;
+<span class="pc bpc" id="L234" title="1 of 2 branches missed.">                    if (!isLastChar(wdsz, n) &amp;&amp;</span>
+<span class="pc bpc" id="L235" title="1 of 4 branches missed.">                        FRONTV.indexOf(local.charAt(n + 1)) &gt;= 0 &amp;&amp;</span>
                         !hard) {
 <span class="fc" id="L237">                        code.append('J');</span>
                     } else {
@@ -243,8 +243,8 @@ public class Metaphone implements StringEncoder {
 <span class="fc bfc" id="L243" title="All 2 branches covered.">                    if (isLastChar(wdsz, n)) {</span>
 <span class="fc" id="L244">                        break; // terminal H</span>
                     }
-<span class="fc bfc" id="L246" title="All 4 branches covered.">                    if (n &gt; 0 &amp;&amp;</span>
-                        VARSON.indexOf(local.charAt(n - 1)) &gt;= 0) {
+<span class="fc bfc" id="L246" title="All 2 branches covered.">                    if (n &gt; 0 &amp;&amp;</span>
+<span class="fc bfc" id="L247" title="All 2 branches covered.">                        VARSON.indexOf(local.charAt(n - 1)) &gt;= 0) {</span>
 <span class="fc" id="L248">                        break;</span>
                     }
 <span class="fc bfc" id="L250" title="All 2 branches covered.">                    if (isVowel(local,n+1)) {</span>
@@ -280,17 +280,17 @@ public class Metaphone implements StringEncoder {
 <span class="fc" id="L280">                    code.append('K');</span>
 <span class="fc" id="L281">                    break;</span>
                 case 'S':
-<span class="fc bfc" id="L283" title="All 6 branches covered.">                    if (regionMatch(local,n,&quot;SH&quot;) ||</span>
-                        regionMatch(local,n,&quot;SIO&quot;) ||
-                        regionMatch(local,n,&quot;SIA&quot;)) {
+<span class="fc bfc" id="L283" title="All 2 branches covered.">                    if (regionMatch(local,n,&quot;SH&quot;) ||</span>
+<span class="fc bfc" id="L284" title="All 2 branches covered.">                        regionMatch(local,n,&quot;SIO&quot;) ||</span>
+<span class="fc bfc" id="L285" title="All 2 branches covered.">                        regionMatch(local,n,&quot;SIA&quot;)) {</span>
 <span class="fc" id="L286">                        code.append('X');</span>
                     } else {
 <span class="fc" id="L288">                        code.append('S');</span>
                     }
 <span class="fc" id="L290">                    break;</span>
                 case 'T':
-<span class="fc bfc" id="L292" title="All 4 branches covered.">                    if (regionMatch(local,n,&quot;TIA&quot;) ||</span>
-                        regionMatch(local,n,&quot;TIO&quot;)) {
+<span class="fc bfc" id="L292" title="All 2 branches covered.">                    if (regionMatch(local,n,&quot;TIA&quot;) ||</span>
+<span class="fc bfc" id="L293" title="All 2 branches covered.">                        regionMatch(local,n,&quot;TIO&quot;)) {</span>
 <span class="fc" id="L294">                        code.append('X');</span>
 <span class="fc" id="L295">                        break;</span>
                     }
@@ -309,8 +309,8 @@ public class Metaphone implements StringEncoder {
 <span class="fc" id="L309">                    code.append('F'); break;</span>
                 case 'W':
                 case 'Y': // silent if not followed by vowel
-<span class="fc bfc" id="L312" title="All 4 branches covered.">                    if (!isLastChar(wdsz,n) &amp;&amp;</span>
-                        isVowel(local,n+1)) {
+<span class="fc bfc" id="L312" title="All 2 branches covered.">                    if (!isLastChar(wdsz,n) &amp;&amp;</span>
+<span class="fc bfc" id="L313" title="All 2 branches covered.">                        isVowel(local,n+1)) {</span>
 <span class="fc" id="L314">                        code.append(symb);</span>
                     }
                     break;
@@ -340,8 +340,8 @@ public class Metaphone implements StringEncoder {
 
     private boolean isPreviousChar(final StringBuilder string, final int index, final char c) {
 <span class="fc" id="L342">        boolean matches = false;</span>
-<span class="pc bpc" id="L343" title="1 of 4 branches missed.">        if( index &gt; 0 &amp;&amp;</span>
-            index &lt; string.length() ) {
+<span class="fc bfc" id="L343" title="All 2 branches covered.">        if( index &gt; 0 &amp;&amp;</span>
+<span class="pc bpc" id="L344" title="1 of 2 branches missed.">            index &lt; string.length() ) {</span>
 <span class="fc bfc" id="L345" title="All 2 branches covered.">            matches = string.charAt(index - 1) == c;</span>
         }
 <span class="fc" id="L347">        return matches;</span>
@@ -349,8 +349,8 @@ public class Metaphone implements StringEncoder {
 
     private boolean isNextChar(final StringBuilder string, final int index, final char c) {
 <span class="fc" id="L351">        boolean matches = false;</span>
-<span class="pc bpc" id="L352" title="1 of 4 branches missed.">        if( index &gt;= 0 &amp;&amp;</span>
-            index &lt; string.length() - 1 ) {
+<span class="pc bpc" id="L352" title="1 of 2 branches missed.">        if( index &gt;= 0 &amp;&amp;</span>
+<span class="fc bfc" id="L353" title="All 2 branches covered.">            index &lt; string.length() - 1 ) {</span>
 <span class="fc bfc" id="L354" title="All 2 branches covered.">            matches = string.charAt(index + 1) == c;</span>
         }
 <span class="fc" id="L356">        return matches;</span>
@@ -358,8 +358,8 @@ public class Metaphone implements StringEncoder {
 
     private boolean regionMatch(final StringBuilder string, final int index, final String test) {
 <span class="fc" id="L360">        boolean matches = false;</span>
-<span class="pc bpc" id="L361" title="1 of 4 branches missed.">        if( index &gt;= 0 &amp;&amp;</span>
-            index + test.length() - 1 &lt; string.length() ) {
+<span class="pc bpc" id="L361" title="1 of 2 branches missed.">        if( index &gt;= 0 &amp;&amp;</span>
+<span class="fc bfc" id="L362" title="All 2 branches covered.">            index + test.length() - 1 &lt; string.length() ) {</span>
 <span class="fc" id="L363">            final String substring = string.substring( index, index + test.length());</span>
 <span class="fc" id="L364">            matches = substring.equals( test );</span>
         }
@@ -427,4 +427,4 @@ public class Metaphone implements StringEncoder {
 <span class="fc" id="L427">    public void setMaxCodeLen(final int maxCodeLen) { this.maxCodeLen = maxCodeLen; }</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.2.201302030002</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

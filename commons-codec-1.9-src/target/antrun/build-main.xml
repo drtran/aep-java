@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <copy todir="C:\csd2015\sample-code\aep-java\commons-codec-1.9-src\target/apidocs/META-INF">
-    <fileset dir="C:\csd2015\sample-code\aep-java\commons-codec-1.9-src">
+  <copy todir="C:\csd-work\shared\sample-code\aep-java\commons-codec-1.9-src\target/apidocs/META-INF">
+    <fileset dir="C:\csd-work\shared\sample-code\aep-java\commons-codec-1.9-src">
       <include name="LICENSE.txt"/>
       <include name="NOTICE.txt"/>
     </fileset>

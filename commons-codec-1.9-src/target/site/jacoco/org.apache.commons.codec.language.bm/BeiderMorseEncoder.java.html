@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BeiderMorseEncoder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.html" class="el_package">org.apache.commons.codec.language.bm</a> &gt; <span class="el_source">BeiderMorseEncoder.java</span></div><h1>BeiderMorseEncoder.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BeiderMorseEncoder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Apache Commons Codec</a> &gt; <a href="index.source.html" class="el_package">org.apache.commons.codec.language.bm</a> &gt; <span class="el_source">BeiderMorseEncoder.java</span></div><h1>BeiderMorseEncoder.java</h1><pre class="source lang-java linenums">/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -127,9 +127,9 @@ import org.apache.commons.codec.StringEncoder;
      */
     public void setConcat(final boolean concat) {
 <span class="fc" id="L129">        this.engine = new PhoneticEngine(this.engine.getNameType(),</span>
-                                         this.engine.getRuleType(),
+<span class="fc" id="L130">                                         this.engine.getRuleType(),</span>
                                          concat,
-                                         this.engine.getMaxPhonemes());
+<span class="fc" id="L132">                                         this.engine.getMaxPhonemes());</span>
 <span class="fc" id="L133">    }</span>
 
     /**
@@ -141,9 +141,9 @@ import org.apache.commons.codec.StringEncoder;
      */
     public void setNameType(final NameType nameType) {
 <span class="fc" id="L143">        this.engine = new PhoneticEngine(nameType,</span>
-                                         this.engine.getRuleType(),
-                                         this.engine.isConcat(),
-                                         this.engine.getMaxPhonemes());
+<span class="fc" id="L144">                                         this.engine.getRuleType(),</span>
+<span class="fc" id="L145">                                         this.engine.isConcat(),</span>
+<span class="fc" id="L146">                                         this.engine.getMaxPhonemes());</span>
 <span class="fc" id="L147">    }</span>
 
     /**
@@ -155,8 +155,8 @@ import org.apache.commons.codec.StringEncoder;
     public void setRuleType(final RuleType ruleType) {
 <span class="fc" id="L156">        this.engine = new PhoneticEngine(this.engine.getNameType(),</span>
                                          ruleType,
-                                         this.engine.isConcat(),
-                                         this.engine.getMaxPhonemes());
+<span class="fc" id="L158">                                         this.engine.isConcat(),</span>
+<span class="fc" id="L159">                                         this.engine.getMaxPhonemes());</span>
 <span class="fc" id="L160">    }</span>
 
     /**
@@ -168,10 +168,10 @@ import org.apache.commons.codec.StringEncoder;
      */
     public void setMaxPhonemes(final int maxPhonemes) {
 <span class="fc" id="L170">        this.engine = new PhoneticEngine(this.engine.getNameType(),</span>
-                                         this.engine.getRuleType(),
-                                         this.engine.isConcat(),
+<span class="fc" id="L171">                                         this.engine.getRuleType(),</span>
+<span class="fc" id="L172">                                         this.engine.isConcat(),</span>
                                          maxPhonemes);
 <span class="fc" id="L174">    }</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.2.201302030002</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
